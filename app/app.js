@@ -21,8 +21,6 @@ const Root = () => {
   );
 };
 
-Root();
-
 function alertMe() {
   alert('Ive made it!!');
   Root();

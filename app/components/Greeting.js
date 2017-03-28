@@ -1,22 +1,39 @@
 /**
  * Created by avishay on 26-Mar-17.
  */
+import React from 'react'
 
 export default class Greeting extends React.Component {
+
   constructor() {
     super();
     this.state = {
       counter: 0,
-      visible: true
+      visible: true,
+      people: [
+        {
+          name: 'John Doe',
+          kills: 0
+        },
+        {
+          name: 'Peter Pan',
+          kills: 0
+        }
+      ]
     }
   }
 
-  handleIncrementAge() {
+  increment() {
+
     let count = this.state.counter;
 
     count++;
 
-    this.setState({ counter: count });
+    const newPeople = this.state.people.map((value) =>
+      Object.assign({}, value, {kills: count})
+    );
+
+    this.setState({people: newPeople, counter: count});
   }
 
   isToggleTrue() {
@@ -24,6 +41,17 @@ export default class Greeting extends React.Component {
 
     this.setState({visible: toggle})
   }
+
+  createPeople() {
+    return (
+      <ul className="">
+        {this.state.people.map((value) => {
+          return <li key={value.name}> {value.name+' '+ value.kills} </li>;
+        })}
+      </ul>
+    );
+  }
+
 
   render() {
     let count;
@@ -39,11 +67,11 @@ export default class Greeting extends React.Component {
         {count}
         <p> Hi! my name is: {this.props.myName}. and my age is: {this.props.myAge}. </p>
         <input type="button" value={ this.props.ooohText || 'oooh' } onClick={this.props.myAlert}/>
-        <input type="button" value={ 'plus' } onClick={() => this.handleIncrementAge()}/>
+        <input type="button" value={ 'plus' } onClick={() => this.increment()}/>
         <input type="button" value={ 'h2 visible?' } onClick={() => this.isToggleTrue()}/>
-
+        {this.createPeople()}
       </div>
-     )
+    )
   }
 }
 

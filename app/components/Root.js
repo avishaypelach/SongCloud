@@ -37,7 +37,7 @@ export default function Root() {
   return (
     <div>
       <Signup/>
-      {/*<Signin/>*/}
+      <Signin/>
 
       <main>
         {/*<Topbar/>*/}

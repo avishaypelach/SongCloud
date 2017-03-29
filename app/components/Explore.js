@@ -4,16 +4,17 @@
 export default function Explore() {
   return (
     <div>
-      <h1> Explore component </h1>
+      <div className="janner-navigation-header">
+        <ul className="janner-navigation">
+          <li className="janner-navigation-li"> <a className="janner-navigation-a" href="#"> Janner </a> </li>
+        </ul>
+      </div>
       <ul>
-        <li> janers </li>
-      </ul>
-      <ul>
-        <li> song </li>
+        <li> song</li>
       </ul>
       <div>
-        <button> Previous </button>
-        <button> Next </button>
+        <button> Previous</button>
+        <button> Next</button>
       </div>
       <div>
         <span> Page Number: 1 </span>

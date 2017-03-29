@@ -36,16 +36,16 @@ export default function Root() {
 
   return (
     <div>
-      {/*<Signup/>*/}
+      <Signup/>
       {/*<Signin/>*/}
 
       <main>
-        <Topbar/>
-        <Explore/>
+        {/*<Topbar/>*/}
+        {/*<Explore/>*/}
       </main>
 
       {/*<Playlist/>*/}
-      <Player/>
+      {/*<Player/>*/}
     </div>
   );
 

@@ -1,0 +1,231 @@
+//* {
+//  border: 1px solid red;
+//}
+a:link,
+a:visited{
+  outline: none;
+}
+
+a:hover,
+a:focus{
+  outline: none;
+}
+
+a:active{
+  outline: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html,
+body {
+  font-size: 100%;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: content-box;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: #FFFFFF;
+}
+
+//-----------header-----------
+
+.header{
+  width: 100%;
+  height: 66px;
+  border-bottom: 2px solid black;
+}
+.navigation{
+  width: 100%;
+  height: 66px;
+  display: flex;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  vertical-align: middle;
+  background-color: #3A3F41;
+}
+.logo-area{
+  display: flex;
+  justify-content: center;
+  height: 66px;
+  background-color: chartreuse;
+  color: white;
+  width: 132px;
+  border-bottom: 2px solid #3A3F41;
+}
+.logo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.logo-img-header{
+  border-color: inherit;
+  align-self: center;
+  color: #FFFFFF;
+  font-size: 2.5rem;
+}
+
+.navigation-list{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: center;
+  vertical-align: middle;
+  list-style: none;
+  color: white;
+  font-size: 1.4rem;
+  margin: 0 20px;
+  padding: 0;
+}
+.navigation-item{
+  margin-right: 30px;
+  height: 66px;
+  display: flex;
+}
+.navigation-item:focus{
+  border-color: fuchsia;
+}
+.navigation-item-link{
+  color: white;
+  align-self: center;
+  line-height: 66px;
+}
+.search-song-area{
+  height: 33px;
+  align-self: center;
+  margin-right: 70px;
+  border-radius: 4px;
+  padding: 0 0 0 10px;
+  background-color: black;
+  color: #FFFFFF;
+  font-weight: 400;
+  border-color: black;
+}
+
+.search-song{
+  height: 33px;
+  align-self: center;
+  margin-right: 70px;
+  border-radius: 4px;
+  padding: 0 0 0 10px;
+  background-color: black;
+  color: #FFFFFF;
+  font-weight: 400;
+  border-color: black;
+}
+.search-song:focus{
+  outline-color: fuchsia;
+}
+
+.log-out-btn{
+  height: 22px;
+  border: 2px solid #FFFFFF;
+  background-color: chartreuse;
+  color: #3A3F41;
+  font-weight: 700;
+  border-radius: 7px;
+  align-self: center;
+}
+.log-out-btn:focus{
+  outline-color: fuchsia;
+}
+//----------------explor-----------
+
+.janner-navigation-header{
+  width: 100%;
+  height: 55px;
+  background-color: chartreuse;
+  display: flex;
+}
+.janner-navigation{
+  width: 90%;
+  height: 22px;
+  list-style: none;
+  color: #FFFFFF;
+  display: flex;
+}
+.janner-navigation-li{
+  padding: 0 10px;
+  border-left: 2px solid fuchsia;
+  border-right: 2px solid fuchsia;
+}
+.janner-navigation-a{
+  color: #FFFFFF;
+  line-height: 22px;
+}
+//----------signup--------------------
+.main-signup{
+  margin: 70px 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.logo-area-signup{
+  font-size: 150px;
+  color: #2196F3;
+  align-self: center;
+}
+
+.signup-h1{
+  color: #2196F3;
+  align-self: center;
+  font-size: 4rem;
+  margin: 0;
+}
+
+.create-account-area{
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 600px;
+  overflow: hidden;
+}
+.signup-h2{
+  font-size: 2rem;
+}
+.user-signup-details{
+  color: #2196F3;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+}
+
+.user-details-input{
+  border: none;
+  border-bottom: 3px solid #2196F3;
+  width: 100%;
+  margin-bottom: 60px;
+  font-size: 1.2rem;
+  padding: 5px;
+  text-transform: capitalize;
+}
+.continue-btn{
+  background-color: #2196F3;
+  align-self: center;
+  color: white;
+  height: 30px;
+  width: 87px;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.user-details-input:active{
+  border: none;
+  border-bottom: 3px solid #2196F3;
+}
+.is-there-an-account{
+  align-self: center;
+
+}

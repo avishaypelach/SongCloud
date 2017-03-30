@@ -10,7 +10,7 @@ export default function Signup() {
       <div className="create-account-area">
         <h2 className="signup-h2"> Create account </h2>
         <span className="user-details"> email </span>
-        <input type="email" name="email" id="" placeholder="email" className="user-details-input"/>
+        <input type="email" name="email" id="" placeholder="user@" className="user-details-input"/>
         <span className="user-details"> password </span>
         <input type="password" name="password" placeholder="password" className="user-details-input"/>
       </div>

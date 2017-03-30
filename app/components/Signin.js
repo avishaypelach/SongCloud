@@ -9,7 +9,7 @@ export default function Signin() {
       <div className="signin-area">
         <h2 className="signin-h2"> sign in </h2>
         <span className="user-details"> email </span>
-        <input type="email" name="email" id="" placeholder="email" className="user-details-input"/>
+        <input type="email" name="email" id="" placeholder="user@" className="user-details-input"/>
         <span className="user-details"> password </span>
         <input type="password" name="password" placeholder="password" className="user-details-input"/>
       </div>

@@ -39,18 +39,18 @@ export default class Explore extends React.Component {
           <div>
             <div className="janner-navigation-header">
               <ul className="janner-navigation">
-                <li className="janner-navigation-li"><a className="janner-navigation-a" href="#"> Janner </a></li>
+                <li className="janner-navigation-li"> <a className="janner-navigation-a" href="#"> Genre </a> </li>
               </ul>
             </div>
+            <h2 className="genre-title"> Genre: </h2>
             <CreateSongList titles = {this.state.titles}/>
-            <div>
-              <button> Previous</button>
-              <button> Next</button>
+            <div className="page-navigation">
+              <button className="page-navigation-btn previous-btn"> Previous </button>
+              <span className="page-number"> Page: 1 </span>
+              <button className="page-navigation-btn next-btn"> Next </button>
             </div>
-            {/*<div>*/}
-              {/*<span> Page Number: 1 </span>*/}
-            {/*</div>*/}
-            {/*<Player/>*/}
+
+            <Player/>
           </div>
         );
     }

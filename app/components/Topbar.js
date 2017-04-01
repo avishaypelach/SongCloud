@@ -10,8 +10,7 @@ export default function Topbar() {
     <header className="header">
       <nav className="navigation">
         <div className="logo-area">
-          <NavLink to="/" className="logo"> <i className="fa fa-mixcloud logo-img-header" aria-hidden="true"/> <span className=""> SongCloud </span> </NavLink>
-
+          <NavLink to="/" className="logo"> <i className="fa fa-mixcloud logo-img-header" aria-hidden="true"/> <span className="songcloud-logo"> SongCloud </span> </NavLink>
         </div>
         <ul className="navigation-list">
 
@@ -20,7 +19,7 @@ export default function Topbar() {
 
         </ul>
         <div className="search-song-area">
-        <input type="" id="" placeholder="Song Name" className="search-song"/> <i className="fa fa-search" aria-hidden="true"/>
+        <input type="" id="" placeholder="Song Name" className="search-song"/> <i className="fa fa-search search-icon" aria-hidden="true"/>
         </div>
         <button type="button" className="log-out-btn"> Logout </button>
       </nav>

@@ -4,16 +4,17 @@
 export default function Player() {
   return (
     <footer>
-      <h1> Player component </h1>
-      <div>
-        <div><img src="" alt="Song thumbnail"/> </div>
-        <div>
+      <div className="player-area">
+        <div><img src="" alt="Song thumbnail"/></div>
+        <div className="song-details-footer">
           <ul>
             <li> Song Name</li>
-            <li> Artist </li>
+            <li> Artist</li>
           </ul>
           <div>
-            <audio controls> <source src="" type=""/> </audio>
+            <audio controls>
+              <source src="" type=""/>
+            </audio>
           </div>
         </div>
       </div>

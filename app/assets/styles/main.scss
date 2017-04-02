@@ -35,6 +35,16 @@ body {
   margin: 0;
   background-color: #FFFFFF;
 }
+.selected{
+  font-weight: 600;
+  background-color: #1E88E5;
+  color: white;
+}
+.selected-genre{
+  font-weight: 600;
+  background-color:  #c3c9cb;
+
+}
 
 //-----------header-----------
 
@@ -104,6 +114,8 @@ body {
   color: white;
   align-self: center;
   line-height: 66px;
+  width: 100px;
+  text-align: center;
 }
 .search-song-area{
   position: relative;
@@ -111,15 +123,6 @@ body {
   display: flex;
   color: #FFFFFF;
   width: 15%;
-  //height: 33px;
-  //align-self: center;
-  //margin-right: 70px;
-  //border-radius: 4px;
-  //padding: 0 0 0 10px;
-  //background-color: black;
-  //color: #FFFFFF;
-  //font-weight: 400;
-  //border-color: black;
 }
 
 .search-song{
@@ -164,6 +167,11 @@ body {
   background-color: #DDE4E6;
   display: flex;
 }
+.h2-genre-nav{
+  align-self: center;
+  font-size: 23px;
+  margin-left: 10px;
+}
 .janner-navigation{
   width: 90%;
   height: 22px;
@@ -172,18 +180,21 @@ body {
   display: flex;
 }
 .janner-navigation-li{
-  padding: 0 10px;
-  border-left: 2px solid fuchsia;
-  border-right: 2px solid fuchsia;
+  padding: 0 10px 0 50px;
+  line-height: 55px;
+  align-self: center;
 }
 .janner-navigation-a{
-  color: #FFFFFF;
   line-height: 22px;
+  text-transform: capitalize;
+  color: #000000;
 }
 
 .genre-title{
   font-size: 23px;
   margin-left: 10px;
+  padding-left: 80px;
+  text-transform: capitalize;
 }
 //----------signup--------------------
 .main-signup{
@@ -372,14 +383,14 @@ body {
 .page-navigation-btn{
   width: 87px;
   height: 30px;
-  color: #FFFFFF;
-  background-color: #2196F3;
   border-radius: 4px;
   font-size: 13px;
   font-weight: 400;
 }
 .previous-btn{
   margin-right: 60px;
+  color: #FFFFFF;
+  background-color:  #999966;
 }
 
 .page-number{
@@ -389,5 +400,26 @@ body {
 
 .next-btn{
   margin-left: 60px;
+  color: #FFFFFF;
+  background-color: #2196F3;
 }
 
+//---------------player-------------
+footer{
+  position: absolute;
+  left: 0 ; right: 0; bottom: 0;
+  height: 60px;
+}
+.player-area{
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  background-color: #DDE4E6;
+  height: 60px;
+}
+.song-details-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}

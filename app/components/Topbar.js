@@ -14,7 +14,8 @@ export default function Topbar() {
         </div>
         <ul className="navigation-list">
 
-          <li className="navigation-item"><NavLink to="/Explore" exact activeClassName="selected" className='navigation-item-link'> Explore </NavLink></li>
+          <li className="navigation-item"><NavLink to="/Explore"  activeClassName="selected" className='navigation-item-link'> Explore </NavLink></li>
+
           <li className="navigation-item"><NavLink to="/Playlist" activeClassName="selected" className='navigation-item-link'> Playlist </NavLink></li>
 
         </ul>

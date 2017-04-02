@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-import Greeting from './Greeting';
+
 import {
   BrowserRouter,
   Route,
@@ -19,36 +19,18 @@ import Player from './Player';
 
 export default function Root() {
 
-  // function alertMe() {
-  //   alert('Ive made it!!');
-  //   Root();
-  // }
-  //
-  // const myDetails = {
-  //   age: 30,
-  //   name: 'Avishay'
-  // };
-  //
-  // return (
-  //   <div>
-  //     <h1>Song Cloud</h1>
-  //     <Greeting
-  //       ooohText="oooh"
-  //       myAge={ myDetails.age }
-  //       myName={ myDetails.name }
-  //       myAlert={alertMe}/>
-  //   </div>
-  // );
-
   return <BrowserRouter>
     <div>
       <Topbar/>
       <Switch>
         <Route exact path="/" render={() =>
-          <Redirect to="/Explore"/>
+          <Redirect to="/Explore/trance"/>
         }/>
-        <Route exact path="/Explore" component={ Explore } />
-        <Route path="/Explore" component={ Explore } />
+        <Route path="/Explore/:genre" component={ Explore } />
+
+        <Route exact path="/Explore" render={()=>
+          <Redirect to="/Explore/trance"/>
+        }/>
         <Route path="/Playlist" component={ Playlist } />
         <Route path="/Player" component={ Player } />
         <Route component={ Oops } />

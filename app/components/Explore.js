@@ -3,19 +3,25 @@
  */
 import CreateSongList from './CreateSongList'
 import Player from './Player'
+import GenreChooseComponent from './GenreChooseComponent'
+
 export default class Explore extends React.Component {
   constructor() {
     super();
     this.state = {
       titles: [],
-      songsLoading: 'loading'
+      songsLoading: 'loading',
+      props: {}
     };
   }
 
-  componentDidMount() {
+  GetXhr() {
+
     const xhr = new XMLHttpRequest();
 
-    xhr.open('GET', 'https://create-bootcamp-songcloud-server.now.sh/tracks?genre=trance');
+    const genre = this.props.match.params.genre;
+
+    xhr.open('GET', `https://create-bootcamp-songcloud-server.now.sh/tracks?genre=${genre}`);
     xhr.addEventListener('load', () => {
       this.setState({titles: JSON.parse(xhr.responseText), songsLoading: 'loaded'});
     });
@@ -25,6 +31,16 @@ export default class Explore extends React.Component {
     xhr.send();
   }
 
+  componentDidMount() {
+    this.GetXhr();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.genre === this.props.match.params.genre)
+      return;
+
+    this.GetXhr();
+  }
 
 
   render() {
@@ -34,23 +50,24 @@ export default class Explore extends React.Component {
       case 'error':
         return <div>Error!</div>;
       case 'loaded':
-        console.info(this.state.titles);
+
         return (
           <div>
-            <div className="janner-navigation-header">
-              <ul className="janner-navigation">
-                <li className="janner-navigation-li"> <a className="janner-navigation-a" href="#"> Genre </a> </li>
-              </ul>
-            </div>
-            <h2 className="genre-title"> Genre: </h2>
-            <CreateSongList titles = {this.state.titles}/>
+
+            <GenreChooseComponent
+              genre = {this.props.match.params.genre}
+            />
+
+            <CreateSongList titles={this.state.titles}/>
+
             <div className="page-navigation">
               <button className="page-navigation-btn previous-btn"> Previous </button>
               <span className="page-number"> Page: 1 </span>
               <button className="page-navigation-btn next-btn"> Next </button>
             </div>
 
-            <Player/>
+            <Player titles={this.state.titles}/>
+
           </div>
         );
     }

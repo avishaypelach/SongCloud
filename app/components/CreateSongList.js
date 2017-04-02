@@ -10,7 +10,7 @@ export default function CreateSongsList(props) {
         {props.titles.map((value) => {
           return <div className="song-card" key={value.title}>
             <div className="img-holder">
-              <img className="song-img" src={value.artwork_url}/>
+              <img className="song-img" src={value.artwork_url.replace('large', 't300x300')}/>
               <i className="fa fa-play-circle-o play-btn-on-card" aria-hidden="true"> </i>
             </div>
             <div className="song-details">

@@ -46,6 +46,12 @@ body {
 
 }
 
+//-------------loading-time-----
+.loading-time{
+  position: absolute;
+  top: 30%;
+  left: 45%;
+}
 //-----------header-----------
 
 .header{
@@ -92,18 +98,18 @@ body {
 }
 .navigation-list{
   height: 100%;
-  width: 50%;
+  width: 30%;
   display: flex;
   align-items: flex-start;
   flex-direction: row;
   list-style: none;
   color: white;
-  font-size: 1.4rem;
-  margin: 0 20px;
-  padding: 0;
+  font-size: 1rem;
+  margin: 0;
+  padding-left: 0;
 }
 .navigation-item{
-  margin-right: 30px;
+  padding-left: 20px;
   height: 66px;
   display: flex;
 }
@@ -117,12 +123,18 @@ body {
   width: 100px;
   text-align: center;
 }
-.search-song-area{
-  position: relative;
+.topbar-right-area{
+  height: 100%;
+  padding-right: 30px;
+  display: flex;
+  justify-content: flex-end;
+  color: #FFFFFF;
+  width: 45%;
+}
+.search-area{
   height: 100%;
   display: flex;
-  color: #FFFFFF;
-  width: 15%;
+  position: relative;
 }
 
 .search-song{
@@ -142,7 +154,7 @@ body {
 .search-icon{
   background-color: #1E88E5;
   position: absolute;
-  left: 12px;
+  left: 5%;
   top: 27px;
   color: #FFFFFF;
   font-size: 0.8rem;
@@ -160,7 +172,10 @@ body {
   outline-color: black;
 }
 //----------------explor-----------
-
+.explore-container{
+  height: calc(100% - 60px);
+  overflow: auto;
+}
 .janner-navigation-header{
   width: 100%;
   height: 55px;
@@ -180,11 +195,12 @@ body {
   display: flex;
 }
 .janner-navigation-li{
-  padding: 0 10px 0 50px;
+  padding: 0 10px 0 80px;
   line-height: 55px;
   align-self: center;
 }
 .janner-navigation-a{
+  font-weight: 300;
   line-height: 22px;
   text-transform: capitalize;
   color: #000000;
@@ -195,6 +211,50 @@ body {
   margin-left: 10px;
   padding-left: 80px;
   text-transform: capitalize;
+}
+//------------playlist-----------------
+.playlist{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+.side-bar-playlist{
+  height: 100%;
+  width: 19.5%;
+  border-right: 1px solid #D8D8D8;
+  display: flex;
+  flex-direction: column;
+}
+.playlists-names{
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  list-style: none;
+}
+.adding-a-playlist-btn-area{
+  height: 7.1%;
+  border-bottom: 1px solid #D8D8D8;
+  display: flex;
+  justify-content: space-around;
+}
+
+.adding-a-playlist-btn{
+  width: 180px;
+  height: 30px;
+  align-self: center;
+  background-color: #2196F3;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+}
+
+.playlists-names-area{
+  height: 92.9%;
+}
+.main-playlist{
+  height: 100%;
+  width: 80.5%;
 }
 //----------signup--------------------
 .main-signup{
@@ -319,6 +379,7 @@ body {
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 20px;
+  padding-left: 80px;
 }
 .song-card{
   display: flex;
@@ -410,11 +471,11 @@ footer{
   left: 0 ; right: 0; bottom: 0;
   height: 60px;
 }
-.player-area{
+.footer-area{
   width: 100%;
   display: flex;
   flex-direction:row;
-  justify-content:center;
+  //justify-content:center;
   background-color: #DDE4E6;
   height: 60px;
 }
@@ -422,4 +483,22 @@ footer{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-self: center;
+  list-style: none;
+  width: 30%;
+}
+.img-area{
+  align-self: center;
+}
+.player-area{
+  display: flex;
+  align-self: center;
+  width: 70%;
+  height: 60px;
+  padding-left: 50px;
+}
+
+.player-tool{
+  align-self: center;
+  width: 60%;
 }

@@ -1,6 +1,8 @@
 /**
  * Created by avishay on 28-Mar-17.
  */
+import React from 'react'
+
 export default function Signup() {
 
   return (

@@ -3,6 +3,7 @@
  */
 import React from 'react';
 
+
 import {
   NavLink
 } from 'react-router-dom'
@@ -11,7 +12,7 @@ export default function GenreChooseComponent(props) {
   return (
     <div>
       <div className="janner-navigation-header">
-        <h2 className="h2-genre-nav"> Genre: </h2>
+        <h2 className="h2-genre-nav"> Genres: </h2>
         <ul className="janner-navigation">
           <li className="janner-navigation-li"><NavLink to="/Explore/trance" activeClassName="selected-genre"
                                                         className="janner-navigation-a"> trance </NavLink></li>

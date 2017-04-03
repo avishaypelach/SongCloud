@@ -4,18 +4,18 @@
 export default function Player() {
   return (
     <footer>
-      <div className="player-area">
-        <div><img src="" alt="Song thumbnail"/></div>
+      <div className="footer-area">
         <div className="song-details-footer">
-          <ul>
-            <li> Song Name</li>
-            <li> Artist</li>
+          <div className="img-area"> <img src="" alt="Song thumbnail"/> </div>
+          <ul className="song-details-footer">
+            <li> Song Name </li>
           </ul>
-          <div>
-            <audio controls>
-              <source src="" type=""/>
+        </div>
+          <div className="player-area">
+            <audio className="player-tool" controls>
+              <source src="https://api.soundcloud.com/tracks/79973942/stream?client_id=2t9loNQH90kzJcsFCODdigxfp325aq4z
+" type="audio/ogg"/>
             </audio>
-          </div>
         </div>
       </div>
     </footer>

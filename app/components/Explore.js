@@ -6,16 +6,14 @@ import CreateSongList from './CreateSongList'
 import GenreChooseComponent from './GenreChooseComponent'
 
 export default class Explore extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       titles: [],
       songsLoading: 'loading',
       props: {},
       offset: 0,
       limit: 15,
-      onClickSong: {}
-
     };
   }
 
@@ -28,8 +26,6 @@ export default class Explore extends React.Component {
     const offset = this.state.offset;
     const limit = this.state.limit;
 
-    console.info(offset);
-    console.info(limit);
 
     xhr.open('GET', `https://api.soundcloud.com/tracks?client_id=2t9loNQH90kzJcsFCODdigxfp325aq4z&limit=${limit}&offset=${offset}&tags=${genre}`);
 
@@ -83,6 +79,7 @@ export default class Explore extends React.Component {
         return <div>Error!</div>;
       case 'loaded':
 
+
         return (
           <div>
             <div className="explore-container">
@@ -92,8 +89,8 @@ export default class Explore extends React.Component {
 
               <CreateSongList
                 titles={this.state.titles}
+                currentTrack={this.props.updateCurrentTrack}
               />
-
               <div className="page-navigation">
                 <button className="page-navigation-btn previous-btn" onClick={this.previousPage.bind(this)}
                         disabled={this.state.offset === 0}> Previous

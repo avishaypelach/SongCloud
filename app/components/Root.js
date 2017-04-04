@@ -25,49 +25,44 @@ export default class Root extends React.Component {
     this.state = {
       currentTrack: {}
     };
+
+    this.updateCurrentTrack = this.updateCurrentTrack.bind(this);
   }
 
 
-  updateCurrentTrack(newTrack){
+  updateCurrentTrack(newTrack) {
     this.setState({
-      currentTrack: Object.assign.currentTrack({},newTrack)
+      currentTrack: Object.assign({}, newTrack)
     })
   }
 
-  oops(){
-    return <div> I dont know what did you want from me!</div>
-  }
+  // oops(){
+  //   return <div> I dont know what did you want from me!</div>
+  // }
 
   render() {
 
-    return <BrowserRouter>
-      <Switch>
-        <Route exact path="/Signin" component={ Signin }/>
-        <Route exact path="/Signup" component={ Signup }/>
+    return <div>
+      <Topbar/>
+      <main>
+        <Switch>
+          <Route exact path="/" render={() =>
+            <Redirect to="/explore/trance"/>
+          }/>
+          <Route path="/explore/:genre" render={(props) => {
+            return <Explore updateCurrentTrack={this.updateCurrentTrack}
+                            {...props}/>
+          }}/>
 
-        <Route path="/" component={() => {
-
-          return  <div>
-              <Topbar/>
-              <main>
-                <Switch>
-                  <Route exact path="/" render={() =>
-                    <Redirect to="/Explore/trance"/>
-                  }/>
-                  <Route path="/Explore/:genre" component={ Explore }/>
-
-                  <Route exact path="/Explore" render={() =>
-                    <Redirect to="/Explore/trance"/>
-                  }/>
-                  <Route path="/Playlist" component={ Playlist }/>
-                  {/*<Route path="/Player" component={ Player }/>*/}
-                  {/*<Route component={ Oops }/>*/}
-                </Switch>
-              </main>
-              <Player track={this.state.currentTrack }/>
-            </div>
-        } }/>
-      </Switch>
-    </BrowserRouter>;
+          <Route exact path="/explore" render={() =>
+            <Redirect to="/explore/trance"/>
+          }/>
+          <Route path="/playlist" component={ Playlist }/>
+          {/*<Route path="/Player" component={ Player }/>*/}
+          {/*<Route component={ Oops }/>*/}
+        </Switch>
+      </main>
+      <Player track={this.state.currentTrack}/>
+    </div>
   }
 }

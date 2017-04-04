@@ -251,12 +251,15 @@ body {
 
 .playlists-names-area{
   height: 92.9%;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
 }
 .main-playlist{
   height: 100%;
   width: 80.5%;
 }
-//----------signup--------------------
+//----------signup--------------
 .main-signup{
   margin: 70px 0;
   display: flex;
@@ -370,10 +373,9 @@ body {
   text-transform: capitalize;
 }
 
-//--------------------create-song-list-------
+//----------------create-song-list-------
 .genre-div{
   display: flex;
-  //flex-direction: row;
   justify-content: space-around;
   flex-flow: row wrap;
   margin-left: 10px;
@@ -467,17 +469,16 @@ body {
 
 //---------------player-------------
 footer{
-  position: absolute;
+  position: fixed;
   left: 0 ; right: 0; bottom: 0;
-  height: 60px;
+  height: 80px;
 }
 .footer-area{
   width: 100%;
   display: flex;
   flex-direction:row;
-  //justify-content:center;
   background-color: #DDE4E6;
-  height: 60px;
+  height: 80px;
 }
 .song-details-footer{
   display: flex;
@@ -489,6 +490,17 @@ footer{
 }
 .img-area{
   align-self: center;
+}
+.song-title{
+  align-self: center;
+}
+.img-player{
+  align-self: center;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  margin-right: 10px;
+  margin-left: 20px;
 }
 .player-area{
   display: flex;

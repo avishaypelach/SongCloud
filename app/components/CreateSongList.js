@@ -5,6 +5,7 @@ import React from 'react';
 
 
 export default function CreateSongsList(props) {
+  // console.info('createsonglistp',props.currentTrack);
 
   function songCreator(value) {
     let trackImg = value.artwork_url ? value.artwork_url.replace('large', 't300x300') : '';
@@ -12,8 +13,8 @@ export default function CreateSongsList(props) {
     return(
       <div className="song-card" key={value.id}>
         <div className="img-holder">
-          <img className="song-img" src={trackImg} onClick={() => this.state.updateCurrentTrack(value)}/>
-          <i className="fa fa-play-circle-o play-btn-on-card" aria-hidden="true"> </i>
+          <img className="song-img" src={trackImg} onClick={() => props.currentTrack(value)}/>
+          <i className="fa fa-play-circle-o play-btn-on-card" onClick={() => props.currentTrack(value)} aria-hidden="true"> </i>
         </div>
         <div className="song-details">
           <p className="song-name"> {value.title.slice(0, 30) + '...'} </p>

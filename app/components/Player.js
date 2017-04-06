@@ -5,7 +5,6 @@ import React from 'react';
 
 export default function Player(props) {
 
-  console.info(props);
   const songUrl = `${props.track.stream_url}?client_id=2t9loNQH90kzJcsFCODdigxfp325aq4z`;
   let trackImg = props.track.artwork_url ? props.track.artwork_url.replace('large', 't300x300') : '';
 

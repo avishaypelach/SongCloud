@@ -14,7 +14,7 @@ import Signup from './Signup';
 import Signin from './Signin';
 import Topbar from './Topbar';
 import Explore from './Explore';
-import Playlist from './Playlist';
+import Playlist from './Playlists';
 import Player from './Player';
 
 export default class Root extends React.Component {
@@ -23,7 +23,8 @@ export default class Root extends React.Component {
     super();
 
     this.state = {
-      currentTrack: {}
+      currentTrack: {},
+      playlists:[{},{}]
     };
 
     this.updateCurrentTrack = this.updateCurrentTrack.bind(this);
@@ -35,6 +36,8 @@ export default class Root extends React.Component {
       currentTrack: Object.assign({}, newTrack)
     })
   }
+
+
 
   // oops(){
   //   return <div> I dont know what did you want from me!</div>
@@ -58,7 +61,6 @@ export default class Root extends React.Component {
             <Redirect to="/explore/trance"/>
           }/>
           <Route path="/playlist" component={ Playlist }/>
-          {/*<Route path="/Player" component={ Player }/>*/}
           {/*<Route component={ Oops }/>*/}
         </Switch>
       </main>

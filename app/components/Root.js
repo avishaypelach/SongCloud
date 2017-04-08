@@ -14,7 +14,7 @@ import Signup from './Signup';
 import Signin from './Signin';
 import Topbar from './Topbar';
 import Explore from './Explore';
-import Playlist from './Playlist';
+import Playlists from './Playlists';
 import Player from './Player';
 
 export default class Root extends React.Component {
@@ -57,7 +57,7 @@ export default class Root extends React.Component {
           <Route exact path="/explore" render={() =>
             <Redirect to="/explore/trance"/>
           }/>
-          <Route path="/playlist" component={ Playlist }/>
+          <Route path="/playlists" component={ Playlists }/>
           {/*<Route path="/Player" component={ Player }/>*/}
           {/*<Route component={ Oops }/>*/}
         </Switch>

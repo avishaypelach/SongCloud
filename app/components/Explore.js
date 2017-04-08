@@ -2,7 +2,7 @@
  * Created by avishay on 28-Mar-17.
  */
 import MDSpinner from "react-md-spinner";
-import CreateSongList from './CreateSongList'
+import Songs from './Songs'
 import GenreChooseComponent from './GenreChooseComponent'
 
 export default class Explore extends React.Component {
@@ -66,7 +66,7 @@ export default class Explore extends React.Component {
       })
     }
     if (prevState.offset !== this.state.offset) {
-        this.GetXhr();
+      this.GetXhr();
     }
   }
 
@@ -87,7 +87,7 @@ export default class Explore extends React.Component {
                 genre={this.props.match.params.genre}
               />
 
-              <CreateSongList
+              <Songs
                 titles={this.state.titles}
                 currentTrack={this.props.updateCurrentTrack}
               />
@@ -102,5 +102,5 @@ export default class Explore extends React.Component {
           </div>
         );
     }
-  };
+  }
 }

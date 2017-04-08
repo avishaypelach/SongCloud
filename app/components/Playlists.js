@@ -6,12 +6,12 @@ import Player from './Player'
 import React from 'react';
 
 
-export default function Playlist() {
+export default function Playlists() {
   return (
     <div className="playlist">
       <div className="side-bar-playlist">
         <div className="adding-a-playlist-btn-area">
-          <button className="adding-a-playlist-btn"> Add new playlist</button>
+          <button className="adding-a-playlist-btn"> Add new playlist </button>
         </div>
         <div className="playlists-names-area">
           <ul className="playlists-names">

@@ -1,16 +1,16 @@
 /**
  * Created by avishay on 28-Mar-17.
  */
+import './player.scss';
 import React from 'react';
 
 export default function Player(props) {
 
-  console.info(props);
   const songUrl = `${props.track.stream_url}?client_id=2t9loNQH90kzJcsFCODdigxfp325aq4z`;
   let trackImg = props.track.artwork_url ? props.track.artwork_url.replace('large', 't300x300') : '';
 
   return (
-    <footer>
+    <footer className="player">
       <div className="footer-area">
         <div className="song-details-footer">
           <div className="img-area"><img src={trackImg} alt="Song thumbnail" className="img-player"/></div>

@@ -1,12 +1,13 @@
 /**
  * Created by avishay on 28-Mar-17.
  */
+import './signup.scss';
 import React from 'react'
 
 export default function Signup() {
 
   return (
-    <div className="main-signup">
+    <div className="main-signup signup">
       <div className="logo-area-signup"><i className="fa fa-mixcloud logo-img-signup" aria-hidden="true"/></div>
       <h1 className="signup-h1"> SongCloud </h1>
       <div className="create-account-area">

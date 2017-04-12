@@ -1,6 +1,7 @@
 /**
  * Created by avishay on 04-Apr-17.
  */
+import './routes.scss';
 import React from 'react';
 
 import {
@@ -10,9 +11,9 @@ import {
   Redirect
 } from 'react-router-dom';
 
-import Signin from './Signin'
-import Signup from  './Signup'
-import Root from './Root'
+import Signin from '../signin/Signin'
+import Signup from  '../signup/Signup'
+import Root from '../root/Root'
 
 
 export default function Routes() {

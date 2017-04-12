@@ -1,6 +1,7 @@
 /**
  * Created by avishay on 28-Mar-17.
  */
+import './root.scss';
 import React from 'react';
 
 import {
@@ -10,12 +11,12 @@ import {
   Redirect
 } from 'react-router-dom';
 
-import Signup from './Signup';
-import Signin from './Signin';
-import Topbar from './Topbar';
-import Explore from './Explore';
-import Playlists from './Playlists';
-import Player from './Player';
+import Signup from '../signup/Signup';
+import Signin from '../signin/Signin';
+import Topbar from '../topbar/Topbar';
+import Explore from '../explore/Explore';
+import Playlists from '../playlists/Playlists';
+import Player from '../player/Player';
 
 export default class Root extends React.Component {
 
@@ -23,7 +24,8 @@ export default class Root extends React.Component {
     super();
 
     this.state = {
-      currentTrack: {}
+      currentTrack: {},
+      playlist: []
     };
 
     this.updateCurrentTrack = this.updateCurrentTrack.bind(this);

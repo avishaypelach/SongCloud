@@ -1,12 +1,14 @@
 /**
  * Created by avishay on 02-Apr-17.
  */
+import './genreChooseComponent.scss';
 import React from 'react';
 
 
 import {
   NavLink
 } from 'react-router-dom'
+
 
 export default function GenreChooseComponent(props) {
   return (

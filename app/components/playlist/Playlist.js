@@ -4,6 +4,7 @@
 /**
  * Created by avishay on 05-Apr-17.
  */
+import './playlist.scss';
 import React from 'react';
 
 
@@ -11,7 +12,7 @@ import Dropdown from 'react-dropdown';
 export default function Playlist(){
 
   return(
-    <div>
+    <div className="playlist">
 
       <div className="playlist-heading-area">
         <span className="playlist-name"> my songs </span>

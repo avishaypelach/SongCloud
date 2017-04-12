@@ -1,9 +1,11 @@
 /**
  * Created by avishay on 28-Mar-17.
  */
+import './explore.scss';
 import MDSpinner from "react-md-spinner";
-import Songs from './Songs'
-import GenreChooseComponent from './GenreChooseComponent'
+import Songs from '../songs/Songs'
+import GenreChooseComponent from '../genreChooseComponent/GenreChooseComponent'
+
 
 export default class Explore extends React.Component {
   constructor(props) {
@@ -41,13 +43,13 @@ export default class Explore extends React.Component {
 
   nextPage() {
     this.setState({
-      offset: this.state.offset + this.state.limit
+      offset: this.state.offset + this.state.limit, loading: true
     })
   }
 
   previousPage() {
     this.setState({
-      offset: this.state.offset - this.state.limit
+      offset: this.state.offset - this.state.limit, loading: true
     })
   }
 
@@ -61,7 +63,7 @@ export default class Explore extends React.Component {
     const changState = this.props.match.params.genre;
 
     if (prev !== changState) {
-      this.setState({offset: 0}, () => {
+      this.setState({offset: 0, loading: true}, () => {
         this.GetXhr();
       })
     }
@@ -74,17 +76,16 @@ export default class Explore extends React.Component {
   render() {
     switch (this.state.songsLoading) {
       case 'loading':
-        return <div className="loading-time"><MDSpinner size={100}/></div>;
+        return <div className="loading-time"> <MDSpinner size={100}/>   </div>;
       case 'error':
-        return <div>Error!</div>;
+        return <div> Error! </div>;
       case 'loaded':
 
-
         return (
-          <div>
+          <div className="explore">
             <div className="explore-container">
               <GenreChooseComponent
-                genre={this.props.match.params.genre}
+                 genre={this.props.match.params.genre}
               />
 
               <Songs

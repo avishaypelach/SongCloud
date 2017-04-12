@@ -1,0 +1,49 @@
+@import 'assets/styles/colors';
+
+
+.loading-time{
+  position: absolute;
+  top: 30%;
+  left: 45%;
+}
+
+.explore-container{
+  height: calc(100vh - 60px);
+  overflow: auto;
+}
+.janner-navigation-header{
+  width: 100%;
+  height: 55px;
+  background-color: $mainGray;
+  display: flex;
+}
+.h2-genre-nav{
+  align-self: center;
+  font-size: 23px;
+  margin-left: 10px;
+}
+.janner-navigation{
+  width: 90%;
+  height: 22px;
+  list-style: none;
+  color: #FFFFFF;
+  display: flex;
+}
+.janner-navigation-li{
+  padding: 0 10px 0 80px;
+  line-height: 55px;
+  align-self: center;
+}
+.janner-navigation-a{
+  font-weight: 300;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #000000;
+}
+
+.genre-title{
+  font-size: 23px;
+  margin-left: 10px;
+  padding-left: 80px;
+  text-transform: capitalize;
+}

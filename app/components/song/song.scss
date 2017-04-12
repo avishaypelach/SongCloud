@@ -1,0 +1,131 @@
+@import 'assets/styles/colors';
+
+//----------------song-------
+.song-card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 140px;
+  margin-bottom: 40px;
+  margin-right: 90px;
+  border: 1px solid #D8D8D8;
+  background:  #FFFFFF;
+}
+.img-holder{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.song-img{
+  align-self: center;
+  width: 200px;
+  height: 80px;
+}
+.play-btn-on-card{
+  font-size: 1.4rem;
+  color: #FFFFFF;
+  position: absolute;
+  top: 42%;
+  left: 44%;
+  display: none;
+}
+.img-holder:hover .play-btn-on-card{
+  display: block;
+}
+.song-details{
+  padding-left: 10px;
+  position: relative;
+  margin-bottom: 4px;
+}
+.song-name{
+  font-size: 0.6rem;
+}
+.song-length-icon{
+  font-size: 0.6rem;
+}
+.song-length{
+  font-size: 0.6rem;
+}
+.song-like{
+  position: absolute;
+  top: 60%;
+  right: 5%;
+  font-size: 0.875rem;
+  color: #D8D8D8;
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+  &:active {
+    color: $mainBlue;
+  }
+}
+
+.page-navigation{
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  width: 100%;
+}
+
+.page-navigation-btn{
+  width: 87px;
+  height: 30px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.previous-btn{
+  margin-right: 60px;
+  color: #FFFFFF;
+  background-color:  #999966;
+}
+
+.page-number{
+  align-self: center;
+  font-size:  14px;
+}
+
+.next-btn{
+  margin-left: 60px;
+  color: #FFFFFF;
+  background-color: $mainBlue;
+}
+.song-dropdown{
+  position: absolute;
+  bottom: -130px;
+  right: 10px;
+  z-index: 10;
+  background-color: #FFFFFF;
+  width: 130px;
+  height: 110px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+}
+//.hidden{
+//  display: none;
+//}
+.dropdown-headers{
+  width: 100%;
+  border-bottom: 1px solid #E0E0E0;
+  padding-bottom: 5px;
+}
+.create-song-dropdown{
+  font-size: 0.5625rem;
+  font-weight: 600;
+  color: $mainBlue;
+}
+.dropdown-playlists-list-area{
+  width: 100%;
+  list-style: none;
+}
+.dropdown-playlists-list{
+  list-style: none;
+  padding: 0;
+}

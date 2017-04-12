@@ -1,13 +1,14 @@
 /**
  * Created by avishay on 28-Mar-17.
  */
+import './topbar.scss';
 import {
   NavLink
 } from 'react-router-dom'
 
 export default function Topbar() {
   return (
-    <header className="header">
+    <header className="header topbar">
       <nav className="navigation">
         <div className="logo-area">
           <NavLink to="/" className="logo"> <i className="fa fa-mixcloud logo-img-header" aria-hidden="true"/> <span

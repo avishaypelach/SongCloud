@@ -1,10 +1,10 @@
 /**
  * Created by avishay on 28-Mar-17.
  */
-
+import './signin.scss';
 export default function Signin() {
   return (
-    <div className="main-signin">
+    <div className="main-signin signin">
       <div className="logo-area-signin"><i className="fa fa-mixcloud logo-img-signin" aria-hidden="true"/></div>
       <h1 className="signin-h1"> SongCloud </h1>
       <div className="signin-area">

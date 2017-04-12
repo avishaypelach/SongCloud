@@ -1,0 +1,49 @@
+@import 'assets/styles/colors';
+
+//------------playlist----------
+.playlist-heading-area{
+  margin-bottom: 2.5%;
+  box-shadow: 0 2px 2px 2px rgba(0,0,0,0.12);
+  width: 100%;
+  height: 60px;
+  display: flex;
+  position: relative;
+}
+.playlist-name{
+  font-size: 1.375rem;
+  align-self: center;
+  margin-left: 2%;
+}
+.number-of-songs-area{
+  position: relative;
+  height: 100%;
+  width: 5%;
+}
+.number-of-songs{
+  position: absolute;
+  top: 15px;
+  left: 5px;
+  border-radius: 32px;
+  background-color: $mainBlue;
+  color: #FFFFFF;
+  padding: 0.5rem;
+  line-height: 9px;
+}
+.delete-playlist-btn{
+  width: 5%;
+  height: 100%;
+  color: $mainRed;
+  align-self: center;
+  background-color: inherit;
+  border: none;
+  text-transform: capitalize;
+  font-size: 0.8125rem;
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 11px;
+}
+.playlist-heading-area:hover .delete-playlist-btn{
+  display: block;
+}

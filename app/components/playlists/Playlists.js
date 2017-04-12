@@ -1,9 +1,10 @@
 /**
  * Created by avishay on 28-Mar-17.
  */
+import './playlists.scss';
 import React from 'react';
 
-import Playlist from './Playlist';
+import Playlist from '../playlist/Playlist';
 export default class Playlists extends React.Component {
 
   constructor() {
@@ -14,7 +15,7 @@ export default class Playlists extends React.Component {
   render() {
 
     return (
-      <div className="playlist">
+      <div className="playlist playlists">
         <div className="side-bar-playlist">
           <div className="adding-a-playlist-btn-area">
             <button className="adding-a-playlist-btn"> Add new playlist</button>

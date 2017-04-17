@@ -12,6 +12,7 @@ export default class Explore extends React.Component {
     super(props);
     this.state = {
       titles: [],
+      mode: 'explore',
       songsLoading: 'loading',
       props: {},
       offset: 0,
@@ -90,7 +91,8 @@ export default class Explore extends React.Component {
 
               <Songs
                 titles={this.state.titles}
-                currentTrack={this.props.updateCurrentTrack}
+                mode={this.state.mode}
+                playlists={this.props.playlists}
               />
               <div className="page-navigation">
                 <button className="page-navigation-btn previous-btn" onClick={this.previousPage.bind(this)}

@@ -64,6 +64,9 @@
     color: $mainBlue;
   }
 }
+.blue-heart{
+  color: $mainBlue;
+}
 
 .page-navigation{
   display: flex;
@@ -128,4 +131,7 @@
 .dropdown-playlists-list{
   list-style: none;
   padding: 0;
+  margin: 0;
 }
+//--------------------------------
+

@@ -8,14 +8,20 @@
 }
 
 .explore-container{
-  height: calc(100vh - 60px);
+  //height: calc(100vh - 60px);
   overflow: auto;
+  //position: fixed;
+  //z-index: 10;
 }
 .janner-navigation-header{
   width: 100%;
   height: 55px;
   background-color: $mainGray;
   display: flex;
+  //position: fixed;
+  //top: 67.5px;
+  //bottom: 0;
+  //z-index: 10;
 }
 .h2-genre-nav{
   align-self: center;

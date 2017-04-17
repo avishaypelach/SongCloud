@@ -13,7 +13,6 @@ export default function Playlist(){
 
   return(
     <div className="playlist">
-
       <div className="playlist-heading-area">
         <span className="playlist-name"> my songs </span>
         <div className="number-of-songs-area">

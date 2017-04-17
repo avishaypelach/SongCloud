@@ -8,5 +8,19 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 
 import Routes from './components/routes/Routes';
+import store from './store'
 
-ReactDOM.render(<Routes/>, document.querySelector('#root'));
+import { Provider } from 'react-redux';
+
+function renderApp() {
+  ReactDOM.render(
+    <Provider store = { store }>
+      <Routes />
+    </Provider>,
+    document.querySelector('#root')
+  );
+}
+
+renderApp();
+
+

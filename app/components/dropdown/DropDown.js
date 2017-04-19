@@ -8,7 +8,9 @@ import './dropdown.scss';
 
 import uuid from 'uuid';
 
-export default class DropDown extends React.Component {
+import { connect } from 'react-redux';
+
+class DropDown extends React.Component {
 
   constructor(props) {
     super(props);
@@ -69,3 +71,12 @@ export default class DropDown extends React.Component {
     );
   }
 }
+
+
+function mapStateToProps(stateData) {
+  return {
+    playlists: stateData.playlists
+  }
+}
+
+export default connect(mapStateToProps)(DropDown);

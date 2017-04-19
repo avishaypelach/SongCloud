@@ -6,8 +6,9 @@ import './song.scss';
 import React from 'react';
 import uuid from 'uuid';
 import DropDown from "../dropdown/DropDown";
+import { connect } from 'react-redux';
 
-export default class Song extends React.Component {
+class Song extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,6 +29,7 @@ export default class Song extends React.Component {
   }
 
   createPlaylist() {
+
   }
 
   handelStoreClick(value) {
@@ -47,29 +49,29 @@ export default class Song extends React.Component {
     }
   }
 
-  songCreator(value) {
-    let trackImg = value.artwork_url ? value.artwork_url.replace('large', 't300x300') : '';
+  songCreator() {
+    let trackImg = this.props.song.artwork_url ? this.props.song.artwork_url.replace('large', 't300x300') : '';
 
     let dropdown = this.state.dropDownIsOpen ?
       <DropDown
         showBtn={true}
         mode={this.props.mode}
-        playlists={this.props.playlists}
-        song={value}
+        // playlists={this.props.playlists}
+        song={this.props.song}
       /> : <div></div>;
 
     return (
       <div className="song-card song">
-        <div className="img-holder" onClick={() => this.handelStoreClick(value)}>
+        <div className="img-holder" onClick={() => this.handelStoreClick(this.props.song)}>
           <img className="song-img" src={trackImg}/>
           <i className="fa fa-play-circle-o play-btn-on-card"
              aria-hidden="true"/>
         </div>
         <div className="song-details">
-          <p className="song-name"> {value.title.slice(0, 30) + '...'} </p>
+          <p className="song-name"> {this.props.song.title.slice(0, 30) + '...'} </p>
           <i className="fa fa-clock-o song-length-icon" aria-hidden="true"/>
-          <span className="song-length"> {this.msToTime(value.duration)} </span>
-          {this.isSongInPlaylist(value)}
+          <span className="song-length"> {this.msToTime(this.props.song.duration)} </span>
+          {this.isSongInPlaylist(this.props.song)}
           {dropdown}
         </div>
       </div>
@@ -79,8 +81,16 @@ export default class Song extends React.Component {
   render() {
     return (
       <div>
-        {this.songCreator(this.props.value)}
+        {this.songCreator(this.props.song)}
       </div>
     );
   }
 }
+
+function mapStateToProps(stateData) {
+  return {
+    playlists: stateData.playlists
+  }
+}
+
+export default connect(mapStateToProps)(Song);

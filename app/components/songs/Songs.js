@@ -13,9 +13,8 @@ export default function Songs(props) {
         return (
           <div key={value.id}>
             <Song
-              value={value}
+              song={value}
               mode={props.mode}
-              playlists={props.playlists}
             />
           </div>
         );

@@ -5,7 +5,8 @@ import './playlists.scss';
 import React from 'react';
 
 import Playlist from '../playlist/Playlist';
-export default class Playlists extends React.Component {
+import { connect } from 'react-redux';
+class Playlists extends React.Component {
 
   constructor() {
     super();
@@ -18,7 +19,7 @@ export default class Playlists extends React.Component {
       <div className="playlist playlists">
         <div className="side-bar-playlist">
           <div className="adding-a-playlist-btn-area">
-            <button className="adding-a-playlist-btn"> Add new playlist</button>
+            <button className="adding-a-playlist-btn"> Add new playlist </button>
           </div>
           <div className="playlists-names-area">
             <ul className="playlists-names">
@@ -30,9 +31,27 @@ export default class Playlists extends React.Component {
 
         </div>
         <div className="main-playlist">
-          <Playlist/>
+
+          {this.props.playlists.map((playlist) => {
+            return (
+              <div key={playlist.id}>
+                <Playlist
+                playlist={playlist}/>
+              </div>
+            );
+          })}
+
         </div>
       </div>
     );
   };
 }
+
+
+function mapStateToProps(stateData) {
+  return {
+    playlists: stateData.playlists
+  }
+}
+
+export default connect(mapStateToProps)(Playlists);

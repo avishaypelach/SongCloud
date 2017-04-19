@@ -6,8 +6,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 function Player(props) {
-
-
   const songUrl = `${props.currentTrack.stream_url}?client_id=2t9loNQH90kzJcsFCODdigxfp325aq4z`;
   let trackImg = props.currentTrack.artwork_url ? props.currentTrack.artwork_url.replace('large', 't300x300') : '';
 

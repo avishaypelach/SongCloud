@@ -8,11 +8,11 @@ import Song from '../song/Song';
 export default function Songs(props) {
   return (
     <div className="genre-div songs">
-
       {props.titles.map((value) => {
         return (
           <div key={value.id}>
             <Song
+              {...props}
               song={value}
               mode={props.mode}
             />

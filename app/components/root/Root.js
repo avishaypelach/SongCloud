@@ -259,40 +259,43 @@ export default class Root extends React.Component {
   //   return <div> I dont know what did you want from me!</div>
   // }
 
-  deleteSongFromPlaylist(song, playlist){
+  deleteSongFromPlaylist(song, playlist) {
     const targetPlaylist = playlist.songs.find((song) => song.id === this.props.song.id);
 
-    if (targetPlaylist){
+    if (targetPlaylist) {
       targetPlaylist.songs.push(this.props.song.id)
     }
-    else{
-      const songIndex = targetPlaylist.songs.findIndex((song)=>song.id === this.props.song.id);
-      targetPlaylist.songs.splice(songIndex,1);
+    else {
+      const songIndex = targetPlaylist.songs.findIndex((song) => song.id === this.props.song.id);
+      targetPlaylist.songs.splice(songIndex, 1);
     }
   }
+  
+
 
   render() {
 
-    return <div>
-      <Topbar/>
-      <main>
-        <Switch>
-          <Route exact path="/" render={() =>
-            <Redirect to="/explore/trance"/>
-          }/>
-          <Route path="/explore/:genre" render={(props) => {
-            return <Explore
-              {...props}
-            />
-          }}/>
-
-          <Route exact path="/explore" render={() =>
-            <Redirect to="/explore/trance"/>
-          }/>
-          <Route path="/playlists" component={ Playlists }/>
-        </Switch>
-      </main>
-      <Player/>
-    </div>
+    return (
+      <div>
+        <Topbar/>
+        <main>
+          <Switch>
+            <Route exact path="/" render={() =>
+              <Redirect to="/explore/trance"/>
+            }/>
+            <Route path="/explore/:genre" render={(props) => {
+              return <Explore
+                {...props}
+              />
+            }}/>
+            <Route exact path="/explore" render={() =>
+              <Redirect to="/explore/trance"/>
+            }/>
+            <Route path="/playlists" component={ Playlists }/>
+          </Switch>
+        </main>
+        <Player/>
+      </div>
+    );
   }
 }

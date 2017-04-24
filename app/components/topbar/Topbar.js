@@ -28,7 +28,7 @@ export default function Topbar() {
             <input type="" id="" placeholder="Song Name" className="search-song"/>
             <i className="fa fa-search search-icon" aria-hidden="true"/>
           </div>
-            <button type="button" className="log-out-btn"> Logout</button>
+            <button type="button" className="log-out-btn"> Logout </button>
         </div>
 
       </nav>

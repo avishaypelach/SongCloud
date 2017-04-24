@@ -222,9 +222,11 @@ const dummyData = [{
   }];
 
 export default function playlistsReducer(state = dummyData, action) {
-  if (action.type === 'CREATE_NEW') {
 
-    state[action.name] = []
+  const currentState=[...state];
+  if (action.type === 'CREATE_NEW') {
+    currentState.push(action.playlist);
+    return currentState;
 
   } else if (action.type === 'ADD_SONG_TO_PLAYLIST') {
 

@@ -2,13 +2,15 @@
 
 //-----------playlists-------
 
-.playlist{
-  display: flex;
-  flex-direction: row;
+.main-playlist{
   width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
   height: calc(100vh - 60px);
   overflow: hidden;
 }
+
 .side-bar-playlist{
   height: 100%;
   width: 19.5%;
@@ -43,11 +45,6 @@
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
-}
-.main-playlist{
-  height: 100%;
-  width: 100%;
-  padding: 20px;
 }
 
 

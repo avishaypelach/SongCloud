@@ -13,21 +13,21 @@ import store from './store'
 import {Provider} from 'react-redux';
 
 
-function GetXhr() {
-
-  const xhr = new XMLHttpRequest();
-
-  xhr.open('GET', 'http://localhost:3000/test');
-
-  xhr.send();
-
-  xhr.addEventListener('load', (e) => {
-    console.info(e.target.responseText);
-  });
-
-}
-
-GetXhr();
+// function GetXhr() {
+//
+//   const xhr = new XMLHttpRequest();
+//
+//   xhr.open('GET', 'http://localhost:3000/test');
+//
+//   xhr.send();
+//
+//   xhr.addEventListener('load', (e) => {
+//     console.info(e.target.responseText);
+//   });
+//
+// }
+//
+// GetXhr();
 
 function renderApp() {
   ReactDOM.render(

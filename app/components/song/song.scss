@@ -18,6 +18,7 @@
   display: flex;
   justify-content: center;
   position: relative;
+  cursor: pointer;
 }
 .song-img{
   align-self: center;
@@ -123,6 +124,9 @@
   font-size: 0.5625rem;
   font-weight: 600;
   color: $mainBlue;
+  background: white;
+  border: none;
+  cursor: pointer;
 }
 .dropdown-playlists-list-area{
   width: 100%;

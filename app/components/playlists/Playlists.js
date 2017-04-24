@@ -5,7 +5,8 @@ import './playlists.scss';
 import React from 'react';
 
 import Playlist from '../playlist/Playlist';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
+
 class Playlists extends React.Component {
 
   constructor() {
@@ -13,13 +14,22 @@ class Playlists extends React.Component {
     this.state = {};
   }
 
+  returningNewPlaylist(playlist){
+    return (
+      <div className="playlist-area" key={playlist.id}>
+        <Playlist
+          playlist={playlist}/>
+      </div>
+    );
+  }
+
   render() {
 
     return (
-      <div className="playlist playlists">
+      <div className="playlist-area playlists">
         <div className="side-bar-playlist">
           <div className="adding-a-playlist-btn-area">
-            <button className="adding-a-playlist-btn"> Add new playlist </button>
+            <button className="adding-a-playlist-btn"> Add new playlist</button>
           </div>
           <div className="playlists-names-area">
             <ul className="playlists-names">
@@ -31,16 +41,7 @@ class Playlists extends React.Component {
 
         </div>
         <div className="main-playlist">
-
-          {this.props.playlists.map((playlist) => {
-            return (
-              <div key={playlist.id}>
-                <Playlist
-                playlist={playlist}/>
-              </div>
-            );
-          })}
-
+          {this.props.playlists.map((playlist) => this.returningNewPlaylist(playlist))}
         </div>
       </div>
     );

@@ -90,6 +90,7 @@ export default class Explore extends React.Component {
               />
 
               <Songs
+                {...this.props}
                 titles={this.state.titles}
                 mode={this.state.mode}
               />

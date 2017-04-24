@@ -14,6 +14,7 @@ class Song extends React.Component {
     this.state = {
       dropDownIsOpen: false
     };
+    this.handelStoreClick = this.handelStoreClick.bind(this);
   }
 
   msToTime(duration) {
@@ -28,15 +29,9 @@ class Song extends React.Component {
     this.setState({dropDownIsOpen: !this.state.dropDownIsOpen})
   }
 
-  createPlaylist() {
-
-  }
 
   handelStoreClick(value) {
-    store.dispatch({
-      type: 'UPDATE_CURRENT_TRACK',
-      song: value
-    })
+    this.props.moveSongToPlaylist(value)
   }
 
   isSongInPlaylist(value) {
@@ -56,7 +51,7 @@ class Song extends React.Component {
       <DropDown
         showBtn={true}
         mode={this.props.mode}
-        // playlists={this.props.playlists}
+        {...this.props}
         song={this.props.song}
       /> : <div></div>;
 
@@ -92,5 +87,15 @@ function mapStateToProps(stateData) {
     playlists: stateData.playlists
   }
 }
+function mapDispatchToProps(dispatch) {
+  return {
+    moveSongToPlaylist(value){
+      dispatch({
+        type: 'UPDATE_CURRENT_TRACK',
+        song: value
+      });
+    }
+  }
+}
 
-export default connect(mapStateToProps)(Song);
+export default connect(mapStateToProps,mapDispatchToProps)(Song);

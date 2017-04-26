@@ -29,7 +29,6 @@ class Song extends React.Component {
     this.setState({dropDownIsOpen: !this.state.dropDownIsOpen})
   }
 
-
   handelStoreClick(value) {
     this.props.moveSongToPlaylist(value)
   }

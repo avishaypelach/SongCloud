@@ -5,6 +5,7 @@
 const dummyData = [{
   id: '123',
   name: 'my girl',
+  isFocusMode: false,
   songs: [{
     artwork_url: "https://i1.sndcdn.com/artworks-000041124475-2lu7vg-large.jpg",
     attachments_uri: "https://api.soundcloud.com/tracks/79973942/attachments",
@@ -114,6 +115,7 @@ const dummyData = [{
   {
     id: '456',
     name: 'my songs',
+    isFocusMode: false,
     songs: [{
       artwork_url: "https://i1.sndcdn.com/artworks-000041124475-2lu7vg-large.jpg",
       attachments_uri: "https://api.soundcloud.com/tracks/79973942/attachments",
@@ -225,7 +227,13 @@ export default function playlistsReducer(state = dummyData, action) {
 
   const currentState=[...state];
   if (action.type === 'CREATE_NEW') {
+
     currentState.push(action.playlist);
+    return currentState;
+
+  } else if (action.type === 'IS_FOCUS_MODE') {
+
+    currentState[action.index].isFocusMode = !currentState[action.index].isFocusMode;
     return currentState;
 
   } else if (action.type === 'ADD_SONG_TO_PLAYLIST') {

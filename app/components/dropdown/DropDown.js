@@ -42,6 +42,7 @@ class DropDown extends React.Component {
     const value = {
       id: uuid(),
       name: 'untitled',
+      isFocusMode: true,
       songs: [song]
     };
     this.props.createNewPlaylistInStore(value);

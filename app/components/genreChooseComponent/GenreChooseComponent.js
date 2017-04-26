@@ -22,6 +22,10 @@ export default function GenreChooseComponent(props) {
                                                         className="janner-navigation-a"> house </NavLink></li>
           <li className="janner-navigation-li"><NavLink to="/Explore/dubstep" activeClassName="selected-genre"
                                                         className="janner-navigation-a"> dubstep </NavLink></li>
+          <li className="janner-navigation-li"><NavLink to="/Explore/hip-hop" activeClassName="selected-genre"
+                                                        className="janner-navigation-a"> hip-hop </NavLink></li>
+          <li className="janner-navigation-li"><NavLink to="/Explore/classic-rock" activeClassName="selected-genre"
+                                                        className="janner-navigation-a"> classic rock</NavLink></li>
         </ul>
       </div>
       <h2 className="genre-title"> Genre: {props.genre} </h2>

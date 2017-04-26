@@ -270,7 +270,7 @@ export default class Root extends React.Component {
       targetPlaylist.songs.splice(songIndex, 1);
     }
   }
-  
+
 
 
   render() {

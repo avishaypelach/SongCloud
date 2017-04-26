@@ -2,36 +2,40 @@
 
 //------------playlist----------
 
-.playlist-area{
+.playlist-area {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: calc(100vh - 60px);
   overflow: hidden;
 }
 
-.playlist{
-width: 100%;
+.playlist {
+  width: 100%;
+  height: 240px;
 }
-.playlist-heading-area{
+
+.playlist-heading-area {
   margin-bottom: 2.5%;
-  box-shadow: 0 2px 2px 2px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.12);
   width: 100%;
   height: 60px;
   display: flex;
   position: relative;
 }
-.playlist-name{
+
+.playlist-name {
   font-size: 1.375rem;
   align-self: center;
   margin-left: 2%;
 }
-.number-of-songs-area{
+
+.number-of-songs-area {
   position: relative;
   height: 100%;
   width: 5%;
 }
-.number-of-songs{
+
+.number-of-songs {
   position: absolute;
   top: 15px;
   left: 5px;
@@ -41,7 +45,8 @@ width: 100%;
   padding: 0.5rem;
   line-height: 9px;
 }
-.delete-playlist-btn{
+
+.delete-playlist-btn {
   width: 5%;
   height: 100%;
   color: $mainRed;
@@ -56,6 +61,7 @@ width: 100%;
   top: 0;
   right: 11px;
 }
-.playlist-heading-area:hover .delete-playlist-btn{
+
+.playlist-heading-area:hover .delete-playlist-btn {
   display: block;
 }

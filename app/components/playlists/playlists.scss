@@ -10,41 +10,7 @@
   overflow: hidden;
 }
 
-.side-bar-playlist{
-  height: 100%;
-  width: 19.5%;
-  border-right: 1px solid #D8D8D8;
-  display: flex;
-  flex-direction: column;
-}
-.playlists-names{
-  display: flex;
-  flex-direction: column;
-  font-size: 1.2rem;
-  list-style: none;
-}
-.adding-a-playlist-btn-area{
-  height: 7.1%;
-  border-bottom: 1px solid #D8D8D8;
-  display: flex;
-  justify-content: space-around;
-}
 
-.adding-a-playlist-btn{
-  width: 180px;
-  height: 30px;
-  align-self: center;
-  background-color: $mainBlue;
-  color: #FFFFFF;
-  font-size: 0.8rem;
-}
-
-.playlists-names-area{
-  height: 92.9%;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: row wrap;
-}
 
 
 

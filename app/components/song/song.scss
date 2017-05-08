@@ -33,6 +33,7 @@
   left: 37%;
   display: none;
 }
+
 .img-holder:hover .play-btn-on-card{
   display: block;
 }
@@ -128,14 +129,6 @@
   border: none;
   cursor: pointer;
 }
-.dropdown-playlists-list-area{
-  width: 100%;
-  list-style: none;
-}
-.dropdown-playlists-list{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+
 //--------------------------------
 

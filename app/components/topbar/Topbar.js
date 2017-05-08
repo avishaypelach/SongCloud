@@ -6,32 +6,49 @@ import {
   NavLink
 } from 'react-router-dom'
 
-export default function Topbar() {
-  return (
-    <header className="header topbar">
-      <nav className="navigation">
-        <div className="logo-area">
-          <NavLink to="/" className="logo"> <i className="fa fa-mixcloud logo-img-header" aria-hidden="true"/> <span
-            className="songcloud-logo"> SongCloud </span> </NavLink>
-        </div>
-        <ul className="navigation-list">
+export default class Topbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
 
-          <li className="navigation-item"><NavLink to="/Explore" activeClassName="selected"
-                                                   className='navigation-item-link'> Explore </NavLink></li>
+    this.handleSearch = this.handleSearch.bind(this)
+  }
 
-          <li className="navigation-item"><NavLink to="/Playlists" activeClassName="selected"
-                                                   className='navigation-item-link'> Playlists </NavLink></li>
+  handleSearch(event) {
+    event.preventDefault();
+    console.info(this);
+    let mySearch = this.search.value;
+    this.props.history.push(`/explore/${mySearch}?search=true`);
+  }
 
-        </ul>
-        <div className="topbar-right-area">
-          <div className="search-area">
-            <input type="" id="" placeholder="Song Name" className="search-song"/>
-            <i className="fa fa-search search-icon" aria-hidden="true"/>
+  render() {
+
+    return (
+      <header className="header topbar">
+        <nav className="navigation">
+          <div className="logo-area">
+            <NavLink to="/" className="logo"> <i className="fa fa-mixcloud logo-img-header" aria-hidden="true"/> <span
+              className="songcloud-logo"> SongCloud </span> </NavLink>
           </div>
-            <button type="button" className="log-out-btn"> Logout </button>
-        </div>
+          <ul className="navigation-list">
 
-      </nav>
-    </header>
-  );
-};
+            <li className="navigation-item"><NavLink to="/Explore" activeClassName="selected"
+                                                     className='navigation-item-link'> Explore </NavLink></li>
+
+            <li className="navigation-item"><NavLink to="/Playlists" activeClassName="selected"
+                                                     className='navigation-item-link'> Playlists </NavLink></li>
+
+          </ul>
+          <div className="topbar-right-area">
+            <form className="search-area" onSubmit={this.handleSearch}>
+              <input placeholder="Song Name" className="search-song" ref={(searchValue) => this.search = searchValue}/>
+              <i className="fa fa-search search-icon" aria-hidden="true"/>
+            </form>
+            <button type="button" className="log-out-btn"> Logout</button>
+          </div>
+
+        </nav>
+      </header>
+    );
+  }
+}

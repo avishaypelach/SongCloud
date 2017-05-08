@@ -1,6 +1,7 @@
 /**
  * Created by avishay on 26-Apr-17.
  */
+import './sidebar.scss';
 import React from 'react';
 import {connect} from 'react-redux';
 import uuid from 'uuid';
@@ -25,18 +26,18 @@ class Sidebar extends React.Component {
 
   createPlaylistList(playlist) {
     return (
-      <li className="dropdown-playlists-list-li" key={playlist.id}>
-        <label htmlFor={playlist.id} className="checkbox">{playlist.name}
-        </label>
+      <li className="sidebar-playlists-list-li" key={playlist.id}>
+        <label htmlFor={playlist.id} className="sidebar-playlist-name">{playlist.name}</label>
       </li>
     );
   }
+
   render() {
 
     return (
       <div className="side-bar-playlist">
         <div className="adding-a-playlist-btn-area">
-          <button className="adding-a-playlist-btn" onClick={() => this.createPlaylist()}> Add new playlist</button>
+          <button className="adding-a-playlist-btn" onClick={() => this.createPlaylist()}> Add new playlist </button>
         </div>
         <div className="playlists-names-area">
           <ul className="playlists-names">

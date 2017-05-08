@@ -225,7 +225,7 @@ const dummyData = [{
 
 export default function playlistsReducer(state = dummyData, action) {
 
-  const currentState=[...state];
+  const currentState = [...state];
   if (action.type === 'CREATE_NEW') {
 
     currentState.push(action.playlist);
@@ -236,14 +236,40 @@ export default function playlistsReducer(state = dummyData, action) {
     currentState[action.index].isFocusMode = !currentState[action.index].isFocusMode;
     return currentState;
 
+  } else if (action.type === 'UPDATE_PLAYLIST_NAME') {
+
+    currentState[action.index].name = action.value;
+
   } else if (action.type === 'ADD_SONG_TO_PLAYLIST') {
 
+    const tempCurrentState = [...currentState];
+    const selectedPlaylist = tempCurrentState.find((playlist) => playlist.id === action.playlist.id);
+
+    selectedPlaylist.songs.push(action.song);
+
+    return tempCurrentState;
+
+  } else if (action.type === 'REMOVE_SONG_FROM_PLAYLIST'){
+
+    const tempCurrentState = [...currentState];
+
+    const selectedPlaylist = tempCurrentState.find((playlist) => playlist.id === action.playlist.id);
+
+    const selectedSong = selectedPlaylist.songs.find((song) => song.id === action.song.id);
+
+    const indexOfRemovedSong = selectedPlaylist.songs.indexOf(selectedSong);
+
+    selectedPlaylist.songs.splice(indexOfRemovedSong, 1);
+
+    return tempCurrentState;
 
   } else if (action.type === 'DELETE_PLAYLIST') {
 
+    const tempCurrentState = [...currentState];
 
-  } else if (action.type === 'RENAME_PLAYLYS') {
+    tempCurrentState.splice(action.index, 1);
 
+    return tempCurrentState
   }
 
   return state;

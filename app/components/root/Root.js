@@ -249,15 +249,6 @@ export default class Root extends React.Component {
   }
 
 
-  // updateCurrentTrack(newTrack) {
-  //   this.setState({
-  //     currentTrack: Object.assign({}, newTrack)
-  //   })
-  // }
-
-  // oops(){
-  //   return <div> I dont know what did you want from me!</div>
-  // }
 
   deleteSongFromPlaylist(song, playlist) {
     const targetPlaylist = playlist.songs.find((song) => song.id === this.props.song.id);
@@ -277,7 +268,9 @@ export default class Root extends React.Component {
 
     return (
       <div>
-        <Topbar/>
+        <Topbar
+          history = {this.props.history}
+        />
         <main>
           <Switch>
             <Route exact path="/" render={() =>

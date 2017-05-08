@@ -23,7 +23,7 @@ export function GetXhr() {
     xhr.open('GET', `https://api.soundcloud.com/tracks?client_id=2t9loNQH90kzJcsFCODdigxfp325aq4z&limit=${limit}&offset=${offset}&tags=${genre}`);
 
     xhr.addEventListener('load', () => {
-      this.setState({titles: JSON.parse(xhr.responseText), songsLoading: 'loaded'});
+      this.setState({songs: JSON.parse(xhr.responseText), songsLoading: 'loaded'});
     });
 
     xhr.addEventListener('error', () => {

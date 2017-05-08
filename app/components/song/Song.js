@@ -6,7 +6,7 @@ import './song.scss';
 import React from 'react';
 import uuid from 'uuid';
 import DropDown from "../dropdown/DropDown";
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 class Song extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Song extends React.Component {
     this.state = {
       dropDownIsOpen: false
     };
-    this.handelStoreClick = this.handelStoreClick.bind(this);
+    this.handelSongClick = this.handelSongClick.bind(this);
   }
 
   msToTime(duration) {
@@ -29,13 +29,13 @@ class Song extends React.Component {
     this.setState({dropDownIsOpen: !this.state.dropDownIsOpen})
   }
 
-  handelStoreClick(value) {
+  handelSongClick(value) {
     this.props.moveSongToPlaylist(value)
   }
 
   isSongInPlaylist(value) {
     let temp = this.props.playlists.find((playlist) => playlist.songs.find((song) => song.id === value.id));
-    if (temp){
+    if (temp) {
       return <i className="fa fa-heart blue-heart song-like" aria-hidden="true" onClick={() => this.openDropdown()}/>;
     }
     else {
@@ -52,11 +52,11 @@ class Song extends React.Component {
         mode={this.props.mode}
         {...this.props}
         song={this.props.song}
-      /> : <div></div>;
+      /> : <div> </div>;
 
     return (
       <div className="song-card song">
-        <div className="img-holder" onClick={() => this.handelStoreClick(this.props.song)}>
+        <div className="img-holder" onClick={() => this.handelSongClick(this.props.song)}>
           <img className="song-img" src={trackImg}/>
           <i className="fa fa-play-circle-o play-btn-on-card"
              aria-hidden="true"/>
@@ -97,4 +97,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Song);
+export default connect(mapStateToProps, mapDispatchToProps)(Song);

@@ -10,9 +10,10 @@ import Sidebar from "../sidebar/Sidebar";
 
 class Playlists extends React.Component {
 
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
   }
 
   returningNewPlaylist(playlist, index) {
@@ -27,7 +28,6 @@ class Playlists extends React.Component {
   }
 
   render() {
-
     return (
       <div className="playlist-area playlists">
         <Sidebar/>
@@ -44,4 +44,5 @@ function mapStateToProps(stateData) {
     playlists: stateData.playlists
   }
 }
+
 export default connect(mapStateToProps)(Playlists);

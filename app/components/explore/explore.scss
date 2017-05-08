@@ -6,22 +6,14 @@
   top: 30%;
   left: 45%;
 }
-
 .explore-container{
-  //height: calc(100vh - 60px);
   overflow: auto;
-  //position: fixed;
-  //z-index: 10;
 }
 .janner-navigation-header{
   width: 100%;
   height: 55px;
   background-color: $mainGray;
   display: flex;
-  //position: fixed;
-  //top: 67.5px;
-  //bottom: 0;
-  //z-index: 10;
 }
 .h2-genre-nav{
   align-self: center;
@@ -30,23 +22,28 @@
 }
 .janner-navigation{
   width: 90%;
-  height: 22px;
+  height: 100%;
   list-style: none;
   color: #FFFFFF;
   display: flex;
+  margin: 0;
 }
 .janner-navigation-li{
   padding: 0 0 0 70px;
   line-height: 55px;
   align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+.selected-genre{
+  line-height: 55px;
 }
 .janner-navigation-a{
   font-weight: 300;
-  line-height: 22px;
   text-transform: capitalize;
   color: #000000;
+  align-self: center;
 }
-
 .genre-title{
   font-size: 23px;
   margin-left: 10px;

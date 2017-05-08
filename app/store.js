@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 
 import playlists from './reducers/playlistsReducer';
-import currentTrack from './reducers/current-track';
+import currentTrack from './reducers/currentTrack';
 import exploreReducer from './reducers/exploreReducer';
 
 const reducer = combineReducers({

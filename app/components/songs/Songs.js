@@ -4,13 +4,14 @@
 import './songs.scss';
 import React from 'react';
 import Song from '../song/Song';
+import uuid from 'uuid';
 
 export default function Songs(props) {
   return (
     <div className="genre-div songs">
-      {props.titles.map((value) => {
+      {props.songs.map((value) => {
         return (
-          <div key={value.id}>
+          <div key={uuid()}>
             <Song
               {...props}
               song={value}

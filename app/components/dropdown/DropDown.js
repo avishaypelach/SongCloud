@@ -23,8 +23,9 @@ class DropDown extends React.Component {
     let exploreDropdown = <div className="dropdown-headers">
       <span> Add new playlist </span>
       <br/>
-      <button className="create-song-dropdown" type="button" onClick={() => this.createPlaylist(this.props.song)}> <i
-        className="fa fa-plus" aria-hidden="true"/> Create playlist </button>
+      <button className="create-song-dropdown" type="button" onClick={() => this.createPlaylist(this.props.song)}><i
+        className="fa fa-plus" aria-hidden="true"/> Create playlist
+      </button>
     </div>;
 
     let playlistDropdwon = <div className="dropdown-headers">
@@ -53,11 +54,11 @@ class DropDown extends React.Component {
     const temp = playlist.songs.find((song) => song.id === this.props.song.id);
     if (temp) {
       return (<input type="checkbox" name={playlist.name} value="" id={playlist.id} defaultChecked
-                     onChange={() => console.info('yep')}/>);
+                     onChange={() => this.props.removingSongFromPlaylist(playlist, this.props.song)}/>);
     }
     else {
       return (
-        <input type="checkbox" name={playlist.name} value="" id={playlist.id} onChange={() => console.info('yepp')}/>);
+        <input type="checkbox" name={playlist.name} value="" id={playlist.id} onChange={() => this.props.addingNewSong(playlist, this.props.song)}/>);
     }
   }
 
@@ -100,6 +101,20 @@ function mapDispatchToProps(dispatch) {
         type: 'CREATE_NEW',
         playlist: value
       });
+    },
+    addingNewSong(playlist,song){
+      dispatch({
+        type: 'ADD_SONG_TO_PLAYLIST',
+        playlist: playlist,
+        song: song
+      })
+    },
+    removingSongFromPlaylist(playlist,song){
+      dispatch({
+        type: 'REMOVE_SONG_FROM_PLAYLIST',
+        playlist: playlist,
+        song: song
+      })
     }
   }
 }

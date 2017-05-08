@@ -11,7 +11,7 @@ export default class Explore extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      titles: [],
+      songs: [],
       mode: 'explore',
       songsLoading: 'loading',
       props: {},
@@ -33,7 +33,7 @@ export default class Explore extends React.Component {
     xhr.open('GET', `https://api.soundcloud.com/tracks?client_id=2t9loNQH90kzJcsFCODdigxfp325aq4z&limit=${limit}&offset=${offset}&tags=${genre}`);
 
     xhr.addEventListener('load', () => {
-      this.setState({titles: JSON.parse(xhr.responseText), songsLoading: 'loaded'});
+      this.setState({songs: JSON.parse(xhr.responseText), songsLoading: 'loaded'});
     });
 
     xhr.addEventListener('error', () => {
@@ -81,7 +81,6 @@ export default class Explore extends React.Component {
       case 'error':
         return <div> Error! </div>;
       case 'loaded':
-
         return (
           <div className="explore">
             <div className="explore-container">
@@ -91,7 +90,7 @@ export default class Explore extends React.Component {
 
               <Songs
                 {...this.props}
-                titles={this.state.titles}
+                songs={this.state.songs}
                 mode={this.state.mode}
               />
               <div className="page-navigation">

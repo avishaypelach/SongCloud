@@ -249,7 +249,7 @@ export default function playlistsReducer(state = dummyData, action) {
 
     return tempCurrentState;
 
-  } else if (action.type === 'REMOVE_SONG_FROM_PLAYLIST'){
+  } else if (action.type === 'REMOVE_SONG_FROM_PLAYLIST') {
 
     const tempCurrentState = [...currentState];
 
@@ -265,11 +265,15 @@ export default function playlistsReducer(state = dummyData, action) {
 
   } else if (action.type === 'DELETE_PLAYLIST') {
 
-    const tempCurrentState = [...currentState];
+    let answer = confirm('are you sure you want to delete' + ' ' + action.name + ' ' + 'playlist?');
 
-    tempCurrentState.splice(action.index, 1);
+    if (answer) {
+      const tempCurrentState = [...currentState];
 
-    return tempCurrentState
+      tempCurrentState.splice(action.index, 1);
+
+      return tempCurrentState
+    }
   }
 
   return state;

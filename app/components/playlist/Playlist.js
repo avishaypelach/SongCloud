@@ -27,7 +27,7 @@ class Playlist extends React.Component {
   }
 
   getPlaylist(event){
-    this.props.removePlaylist(event.target.value, this.props.index)
+    this.props.removePlaylist(event.target.value, this.props.index ,this.props.playlist.name)
   }
 
   editMode() {
@@ -94,11 +94,12 @@ function mapDispatchToProps(dispatch) {
         index: index
       })
     },
-    removePlaylist(event, index){
+    removePlaylist(event, index, name){
       dispatch({
         type: 'DELETE_PLAYLIST',
         value: event,
-        index: index
+        index: index,
+        name: name
       })
     }
   }

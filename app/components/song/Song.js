@@ -12,9 +12,11 @@ class Song extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dropDownIsOpen: false
+      dropDownIsOpen: false,
+      playingMode: false
     };
     this.handelSongClick = this.handelSongClick.bind(this);
+    this.whatModePlayerIs = this.whatModePlayerIs.bind(this);
   }
 
   msToTime(duration) {
@@ -43,6 +45,19 @@ class Song extends React.Component {
     }
   }
 
+  isSongPlaying() {
+    this.setState({playingMode: !this.state.playingMode})
+  }
+
+  whatModePlayerIs() {
+    if (this.state.playingMode === true) {
+      return <i className="fa fa-pause-circle-o play-btn-on-card" aria-hidden="true"/>;
+    }
+    else {
+      return <i className="fa fa-play-circle-o play-btn-on-card" aria-hidden="true"/>;
+    }
+  }
+
   songCreator() {
     let trackImg = this.props.song.artwork_url ? this.props.song.artwork_url.replace('large', 't300x300') : '';
 
@@ -56,10 +71,12 @@ class Song extends React.Component {
 
     return (
       <div className="song-card song">
-        <div className="img-holder" onClick={() => this.handelSongClick(this.props.song)}>
+        <div className="img-holder" onClick={() => {
+          this.handelSongClick(this.props.song);
+          this.isSongPlaying()
+        }}>
           <img className="song-img" src={trackImg}/>
-          <i className="fa fa-play-circle-o play-btn-on-card"
-             aria-hidden="true"/>
+          {this.whatModePlayerIs()}
         </div>
         <div className="song-details">
           <p className="song-name"> {this.props.song.title.slice(0, 30) + '...'} </p>
@@ -83,7 +100,8 @@ class Song extends React.Component {
 
 function mapStateToProps(stateData) {
   return {
-    playlists: stateData.playlists
+    playlists: stateData.playlists,
+    currentTrack: stateData.currentTrack
   }
 }
 function mapDispatchToProps(dispatch) {

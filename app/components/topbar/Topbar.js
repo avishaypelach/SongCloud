@@ -16,13 +16,11 @@ export default class Topbar extends React.Component {
 
   handleSearch(event) {
     event.preventDefault();
-    console.info(this);
     let mySearch = this.search.value;
     this.props.history.push(`/explore/${mySearch}?search=true`);
   }
 
   render() {
-
     return (
       <header className="header topbar">
         <nav className="navigation">
@@ -50,5 +48,6 @@ export default class Topbar extends React.Component {
         </nav>
       </header>
     );
+
   }
 }

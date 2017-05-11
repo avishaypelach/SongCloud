@@ -13,6 +13,11 @@ class Player extends React.Component {
     };
   }
 
+  componentDidUpdate(prevProps){
+     if(!prevProps === this.props.currentTrack){
+       this.player.pause()
+     }
+  }
 
   isPlayerGettingASong() {
     if (this.props.currentTrack === null) {
@@ -31,7 +36,7 @@ class Player extends React.Component {
                     title={this.props.currentTrack.title}> {this.props.currentTrack.title} </span>
             </div>
             <div className="player-area">
-              <audio className="player-tool" controls src={songUrl} autoPlay/>
+              <audio className="player-tool" controls src={songUrl} autoPlay ref={(ref) => this.player = ref } onPlay={()=>console.info('it played')} onPause={()=> console.info('it stopped')}/>
             </div>
           </div>
         </footer>

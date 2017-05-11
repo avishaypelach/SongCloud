@@ -58,7 +58,8 @@ class DropDown extends React.Component {
     }
     else {
       return (
-        <input type="checkbox" name={playlist.name} value="" id={playlist.id} onChange={() => this.props.addingNewSong(playlist, this.props.song)}/>);
+        <input type="checkbox" name={playlist.name} value="" id={playlist.id}
+               onChange={() => this.props.addingNewSong(playlist, this.props.song)}/>);
     }
   }
 
@@ -102,14 +103,14 @@ function mapDispatchToProps(dispatch) {
         playlist: value
       });
     },
-    addingNewSong(playlist,song){
+    addingNewSong(playlist, song){
       dispatch({
         type: 'ADD_SONG_TO_PLAYLIST',
         playlist: playlist,
         song: song
       })
     },
-    removingSongFromPlaylist(playlist,song){
+    removingSongFromPlaylist(playlist, song){
       dispatch({
         type: 'REMOVE_SONG_FROM_PLAYLIST',
         playlist: playlist,

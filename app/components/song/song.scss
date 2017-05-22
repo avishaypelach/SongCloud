@@ -8,7 +8,7 @@
   width: 220px;
   height: 140px;
   margin-bottom: 40px;
-  margin-right: 90px;
+  margin-right: 50px;
   border: 1px solid #D8D8D8;
   background:  #FFFFFF;
 }
@@ -35,6 +35,14 @@
 }
 
 .img-holder:hover .play-btn-on-card{
+  display: block;
+}
+.pause-btn-on-card{
+  font-size: 4.4rem;
+  color: #FFFFFF;
+  position: absolute;
+  top: 13%;
+  left: 37%;
   display: block;
 }
 .song-details{

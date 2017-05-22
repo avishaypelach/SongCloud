@@ -13,10 +13,10 @@ class Player extends React.Component {
     };
   }
 
-  componentDidUpdate(prevProps){
-     if(!prevProps === this.props.currentTrack){
-       this.player.pause()
-     }
+  componentDidUpdate(prevProps) {
+    if (!prevProps === this.props.currentTrack) {
+      this.player.pause()
+    }
   }
 
   isPlayerGettingASong() {
@@ -24,7 +24,6 @@ class Player extends React.Component {
       return (null);
     }
     else {
-
       const songUrl = `${this.props.currentTrack.stream_url}?client_id=2t9loNQH90kzJcsFCODdigxfp325aq4z`;
       let trackImg = this.props.currentTrack.artwork_url ? this.props.currentTrack.artwork_url.replace('large', 't300x300') : '';
 
@@ -36,7 +35,8 @@ class Player extends React.Component {
                     title={this.props.currentTrack.title}> {this.props.currentTrack.title} </span>
             </div>
             <div className="player-area">
-              <audio className="player-tool" controls src={songUrl} autoPlay ref={(ref) => this.player = ref } onPlay={()=>console.info('it played')} onPause={()=> console.info('it stopped')}/>
+              <audio className="player-tool" controls src={songUrl} autoPlay ref={(ref) => this.player = ref }
+                     onPlay={() => console.info('it played')} onPause={() => console.info('it stopped')}/>
             </div>
           </div>
         </footer>

@@ -1,30 +1,39 @@
-//'use strict';
 
 
-const express = require('express');
-const app     = express();
-const port    =   process.env.PORT || 3000;
-const cors = require('cors');
-const fs = require('fs');
-const bodyParser = require('body-parser');
+const express = require('express')
+const cors = require('cors')
+const fs = require('fs')
+const bodyParser = require('body-parser')
 
-// ROUTES
-// ==============================================
+const app = express()
 
-// sample route with a route the way we're used to seeing it
-app.get('/sample', function(req, res) {
-  res.send('this is a sample!');
-});
+app.use(cors({
+  origin: (origin, callback) => {
+    callback(null, true)
+  },
+  credentials: true
+}))
 
+app.use(bodyParser.json())
 
-app.get('/test', function(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
-  //
-  res.sendFile(__dirname + '/data.json');
-});
-// we'll create our routes here
+app.get('/playlists', (req, res) => {
+  const data = fs.readFileSync(__dirname + '/playlists.json')
 
-// START THE SERVER
-// ==============================================
-app.listen(port);
-console.log('Magic happens on port ' + port);
+  res.send(data)
+})
+
+app.post('/playlists', (req, res) => {
+  const data = fs.readFileSync(__dirname + '/playlists.json')
+
+  const playlists = JSON.parse(data)
+
+  playlists.push(req.body)
+
+  fs.writeFileSync(__dirname + '/playlists.json', JSON.stringify(playlists))
+
+  res.send('OK')
+})
+
+app.listen(3000, () => {
+  console.log('Listening...')
+})

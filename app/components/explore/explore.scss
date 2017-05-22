@@ -37,12 +37,15 @@
 }
 .selected-genre{
   line-height: 55px;
+  padding: 0 10px;
 }
 .janner-navigation-a{
   font-weight: 300;
   text-transform: capitalize;
   color: #000000;
   align-self: center;
+  //min-width: 70px;
+  //padding-left: 20px;
 }
 .genre-title{
   font-size: 23px;

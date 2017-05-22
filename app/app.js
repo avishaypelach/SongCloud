@@ -13,21 +13,32 @@ import store from './store'
 import {Provider} from 'react-redux';
 
 
-// function GetXhr() {
-//
+// function readData() {
+//   console.info('read data');
 //   const xhr = new XMLHttpRequest();
 //
-//   xhr.open('GET', 'http://localhost:3000/test');
+//   xhr.open('GET', 'http://localhost:3000/playlists');
+//   xhr.addEventListener('load', () => {
+//     document.querySelector('#root').textContent = '';
+//     const playlists = JSON.parse(xhr.responseText);
 //
+//     for (const playlist of playlists) {
+//       const d = document.createElement('div');
+//
+//       d.textContent = playlist.title;
+//
+//       document.querySelector('#root').appendChild(d);
+//     }
+//
+//     setTimeout(readData, 3000);
+//   });
+//   xhr.addEventListener('error', () => {
+//     alert('problem!');
+//   });
 //   xhr.send();
 //
-//   xhr.addEventListener('load', (e) => {
-//     console.info(e.target.responseText);
-//   });
-//
 // }
-//
-// GetXhr();
+// readData();
 
 function renderApp() {
   ReactDOM.render(

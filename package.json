@@ -5,7 +5,8 @@
   "scripts": {
     "start": "webpack-dev-server --hot --progress",
     "build": "NODE_ENV=production webpack -p --progress",
-    "buildwin": "set NODE_ENV=production&webpack -p --progress"
+    "buildwin": "set NODE_ENV=production&webpack -p --progress",
+    "server": "node server/server.js"
   },
   "license": "ISC",
   "dependencies": {

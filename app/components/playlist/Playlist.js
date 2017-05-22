@@ -26,8 +26,8 @@ class Playlist extends React.Component {
     this.props.handelChange(event.target.value, this.props.index)
   }
 
-  getPlaylist(event){
-    this.props.removePlaylist(event.target.value, this.props.index ,this.props.playlist.name)
+  getPlaylist(event) {
+    this.props.removePlaylist(event.target.value, this.props.index, this.props.playlist.name)
   }
 
   editMode() {
@@ -60,14 +60,23 @@ class Playlist extends React.Component {
     }
   }
 
+  isEmptyPlaylist() {
+    if (this.props.playlist.songs.length === 0) {
+      return <div className="no-songs-in-playlist-heading"><span>"Add some songs to this playlist." </span></div>
+    }
+    else {
+      return (<Songs
+        songs={this.props.playlist.songs}
+        mode={' '}
+      />);
+    }
+  }
+
   render() {
     return (
       <div className="playlist">
         {this.editMode()}
-        <Songs
-          songs={this.props.playlist.songs}
-          mode={' '}
-        />
+        {this.isEmptyPlaylist()}
       </div>
     );
   }
@@ -81,7 +90,7 @@ function mapStateToProps(stateData) {
 
 function mapDispatchToProps(dispatch) {
   return {
-     changeMode(value){
+    changeMode(value){
       dispatch({
         type: 'IS_FOCUS_MODE',
         index: value

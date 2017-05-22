@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from 'redux';
+import {createStore, combineReducers} from 'redux';
 
 import playlists from './reducers/playlistsReducer';
 import currentTrack from './reducers/currentTrack';

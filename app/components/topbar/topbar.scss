@@ -91,12 +91,16 @@
   background-color: $darkenBlue;
   font-weight: 400;
   color: #FFFFFF;
-  border: 1px solid #D8D8D8;
+  border: 2px solid #D8D8D8;
   cursor: pointer;
 }
 .search-song:focus{
   border-radius: 19px;
 }
+.search-song::placeholder{
+  color: white;
+}
+
 .search-icon{
   background-color: $darkenBlue;
   position: absolute;

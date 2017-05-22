@@ -51,7 +51,7 @@ class Song extends React.Component {
 
   whatModePlayerIs() {
     if (this.state.playingMode === true) {
-      return <i className="fa fa-pause-circle-o play-btn-on-card" aria-hidden="true"/>;
+      return <i className="fa fa-pause-circle-o pause-btn-on-card" aria-hidden="true"/>;
     }
     else {
       return <i className="fa fa-play-circle-o play-btn-on-card" aria-hidden="true"/>;
@@ -73,7 +73,8 @@ class Song extends React.Component {
       <div className="song-card song">
         <div className="img-holder" onClick={() => {
           this.handelSongClick(this.props.song);
-          this.isSongPlaying()
+          this.isSongPlaying();
+          console.info(this.props, 'pressing on pic');
         }}>
           <img className="song-img" src={trackImg}/>
           {this.whatModePlayerIs()}

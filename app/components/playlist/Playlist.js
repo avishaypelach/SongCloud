@@ -73,6 +73,7 @@ class Playlist extends React.Component {
   }
 
   render() {
+    console.info(this.props);
     return (
       <div className="playlist">
         {this.editMode()}

@@ -265,7 +265,7 @@ export default function playlistsReducer(state = dummyData, action) {
 
   } else if (action.type === 'DELETE_PLAYLIST') {
 
-    let answer = confirm('are you sure you want to delete' + ' ' + action.name + ' ' + 'playlist?');
+    let answer = confirm('are you sure you want to delete' + ' ' + '{' + action.name + '}' + ' ' + 'playlist?');
 
     if (answer) {
       const tempCurrentState = [...currentState];

@@ -65,10 +65,14 @@
   top: 0;
   right: 11px;
 }
+.delete-playlist-btn:focus{
+  outline: none;
+}
 
 .playlist-heading-area:hover .delete-playlist-btn {
   display: block;
 }
+
 .no-songs-in-playlist-heading{
   display: flex;
   justify-content: center;

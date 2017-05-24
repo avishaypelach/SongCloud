@@ -73,11 +73,25 @@ export default class Explore extends React.Component {
     }
   }
 
+  isFirstPage() {
+    if (this.state.offset === 0) {
+      return (<button className="page-navigation-btn previous-btn" onClick={this.previousPage.bind(this)}
+                      disabled={this.state.offset === 0}> Previous
+      </button>);
+    }
+    else {
+      return (
+        <button className="page-navigation-btn previous-btn-not-first-page" onClick={this.previousPage.bind(this)}
+                disabled={this.state.offset === 0}> Previous
+        </button>
+      );
+    }
+  }
 
   render() {
     switch (this.state.songsLoading) {
       case 'loading':
-        return <div className="loading-time"> <MDSpinner size={100}/>   </div>;
+        return <div className="loading-time"><MDSpinner size={100}/></div>;
       case 'error':
         return <div> Error! </div>;
       case 'loaded':
@@ -85,7 +99,7 @@ export default class Explore extends React.Component {
           <div className="explore">
             <div className="explore-container">
               <GenreChooseComponent
-                 genre={this.props.match.params.genre}
+                genre={this.props.match.params.genre}
               />
 
               <Songs
@@ -94,9 +108,7 @@ export default class Explore extends React.Component {
                 mode={this.state.mode}
               />
               <div className="page-navigation">
-                <button className="page-navigation-btn previous-btn" onClick={this.previousPage.bind(this)}
-                        disabled={this.state.offset === 0}> Previous
-                </button>
+                {this.isFirstPage()}
                 <span className="page-number"> Page: {(this.state.offset / this.state.limit) + 1} </span>
                 <button className="page-navigation-btn next-btn" onClick={this.nextPage.bind(this)}> Next</button>
               </div>

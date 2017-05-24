@@ -64,7 +64,8 @@
   top: 60%;
   right: 5%;
   font-size: 0.875rem;
-  color: #D8D8D8;
+  color: #1e88e5;
+  font-weight: 600;
   cursor: pointer;
 
   &:hover {
@@ -95,7 +96,13 @@
 .previous-btn{
   margin-right: 60px;
   color: #FFFFFF;
-  background-color:  #999966;
+  border: none;
+}
+
+.previous-btn-not-first-page{
+  margin-right: 60px;
+  color: #FFFFFF;
+  background-color:  $mainBlue;
 }
 
 .page-number{

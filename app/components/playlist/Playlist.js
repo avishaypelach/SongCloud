@@ -73,9 +73,8 @@ class Playlist extends React.Component {
   }
 
   render() {
-    console.info(this.props);
     return (
-      <div className="playlist">
+      <div className="playlist" onClick={()=>console.info(this.props.playlists, 'shalom')}>
         {this.editMode()}
         {this.isEmptyPlaylist()}
       </div>

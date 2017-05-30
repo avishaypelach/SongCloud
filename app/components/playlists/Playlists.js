@@ -12,13 +12,18 @@ class Playlists extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.playlistId !== nextProps.playlistId) {
+      this.refs[nextProps.playlistId].scrollIntoView({block: 'start', behavior: 'smooth'})
+    }
   }
 
   returningNewPlaylist(playlist, index) {
     return (
-      <div className="playlist-area" key={playlist.id}>
+      <div className="playlist-area" key={playlist.id} ref={'scroll' + playlist.id}>
         <Playlist
           playlist={playlist}
           index={index}
@@ -31,7 +36,7 @@ class Playlists extends React.Component {
     return (
       <div className="playlist-area playlists">
         <Sidebar/>
-        <div className="main-playlist">
+        <div className="main-playlists">
           {this.props.playlists.map((playlist, index) => this.returningNewPlaylist(playlist, index))}
         </div>
       </div>
@@ -41,8 +46,10 @@ class Playlists extends React.Component {
 
 function mapStateToProps(stateData) {
   return {
-    playlists: stateData.playlists
+    playlists: stateData.playlists,
+    playlistId: stateData.scrollReducer
   }
 }
+
 
 export default connect(mapStateToProps)(Playlists);

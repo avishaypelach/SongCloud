@@ -60,14 +60,13 @@ class Song extends React.Component {
 
   songCreator() {
     let trackImg = this.props.song.artwork_url ? this.props.song.artwork_url.replace('large', 't300x300') : '';
-
     let dropdown = this.state.dropDownIsOpen ?
       <DropDown
         showBtn={true}
         mode={this.props.mode}
         {...this.props}
         song={this.props.song}
-      /> : <div> </div>;
+      /> : <div></div>;
 
     return (
       <div className="song-card song">
@@ -76,7 +75,9 @@ class Song extends React.Component {
           this.isSongPlaying();
           console.info(this.props, 'pressing on pic');
         }}>
-          <img className="song-img" src={trackImg}/>
+          <div className="song-img"
+               style={{'backgroundImage': `url("${trackImg}")`}}
+          />
           {this.whatModePlayerIs()}
         </div>
         <div className="song-details">

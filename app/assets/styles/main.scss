@@ -6,6 +6,12 @@
 @import 'colors';
 @import 'helpers';
 
+*{
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 //a:link,
 //a:visited{
 //  outline: none;
@@ -24,12 +30,6 @@
 //  text-decoration: none;
 //}
 //
-//html {
-//  box-sizing: border-box;
-//}
-//*, *:before, *:after {
-//  box-sizing: inherit;
-//}
 //html,
 //body {
 //  font-size: 100%;

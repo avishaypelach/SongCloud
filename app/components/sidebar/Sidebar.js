@@ -24,20 +24,23 @@ class Sidebar extends React.Component {
     this.props.createNewPlaylistInStore(value);
   }
 
+  handelLiClick(e) {
+    const playlistId = e.target.id;
+    this.props.scrollToPlaylist(playlistId);
+  }
+
+
   createPlaylistList(playlist) {
     return (
-      <li className="sidebar-playlists-list-li" key={playlist.id}>
-        <label htmlFor={playlist.id} className="sidebar-playlist-name">{playlist.name}</label>
-      </li>
+      <li className="sidebar-playlists-list-li" key={playlist.id} id={'scroll' + playlist.id} onClick={(e) => this.handelLiClick(e)}> {playlist.name} </li>
     );
   }
 
   render() {
-
     return (
       <div className="side-bar-playlist">
         <div className="adding-a-playlist-btn-area">
-          <button className="adding-a-playlist-btn" onClick={() => this.createPlaylist()}> Add new playlist </button>
+          <button className="adding-a-playlist-btn" onClick={() => this.createPlaylist()}> Add new playlist</button>
         </div>
         <div className="playlists-names-area">
           <ul className="playlists-names">
@@ -61,6 +64,12 @@ function mapDispatchToProps(dispatch) {
       dispatch({
         type: 'CREATE_NEW',
         playlist: value
+      });
+    },
+    scrollToPlaylist(value){
+      dispatch({
+        type: 'SCROLL_TO_PLAYLIST',
+        id: value
       });
     }
   }

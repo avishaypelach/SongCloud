@@ -2,12 +2,14 @@
 
 //-----------playlists-------
 
-.main-playlist{
-  width: 100%;
-  padding: 20px;
+.main-playlists {
+  width: 74.5%;
+  margin: 20px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  position: absolute;
+  right: 0;
+  box-sizing: border-box;
 }
 
 

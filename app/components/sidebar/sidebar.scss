@@ -8,6 +8,8 @@
   flex-direction: column;
   padding-left: 10px;
   padding-right: 10px;
+  position: fixed;
+  z-index: 100;
 }
 .adding-a-playlist-btn-area{
   height: 7.1%;
@@ -49,4 +51,8 @@
   line-height: 20px;
   font-size: 0.9375rem;
   font-weight: 300;
+  cursor: pointer;
+}
+.sidebar-playlist-name{
+  cursor: pointer;
 }

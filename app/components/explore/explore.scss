@@ -1,15 +1,16 @@
 @import 'assets/styles/colors';
 
-
-.loading-time{
+.loading-time {
   position: absolute;
   top: 30%;
   left: 45%;
 }
-.explore-container{
+
+.explore-container {
   overflow: auto;
 }
-.janner-navigation-header{
+
+.genre-navigation-header {
   width: 100%;
   height: 55px;
   background-color: $mainGray;
@@ -19,12 +20,14 @@
   left: 0;
   z-index: 100;
 }
-.h2-genre-nav{
+
+.h2-genre-nav {
   align-self: center;
   font-size: 23px;
   margin-left: 10px;
 }
-.janner-navigation{
+
+.genre-navigation {
   width: 90%;
   height: 100%;
   list-style: none;
@@ -32,29 +35,69 @@
   display: flex;
   margin: 0;
 }
-.janner-navigation-li{
+
+.genre-navigation-li {
   padding: 0 0 0 70px;
   line-height: 55px;
   align-self: center;
   display: flex;
   flex-direction: column;
 }
-.selected-genre{
-  line-height: 55px;
-  padding: 0 10px;
+
+.selected-genre {
+  padding: 0 13px;
 }
-.janner-navigation-a{
+
+.genre-navigation-a {
   font-weight: 300;
   text-transform: capitalize;
   color: #000000;
   align-self: center;
-  //min-width: 70px;
-  //padding-left: 20px;
 }
-.genre-title{
+
+.genre-title {
   font-size: 23px;
   margin-left: 10px;
-  padding-left: 80px;
+  padding-left: 62px;
   text-transform: capitalize;
   margin-top: 80px;
+}
+
+.page-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.page-navigation-btn {
+  width: 87px;
+  height: 30px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.previous-btn {
+  margin-right: 60px;
+  color: #FFFFFF;
+  border: none;
+}
+
+.previous-btn-not-first-page {
+  margin-right: 60px;
+  color: #FFFFFF;
+  background-color: $mainBlue;
+}
+
+.page-number {
+  align-self: center;
+  font-size: 14px;
+}
+
+.next-btn {
+  margin-left: 60px;
+  color: #FFFFFF;
+  background-color: $mainBlue;
 }

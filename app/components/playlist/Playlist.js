@@ -23,7 +23,12 @@ class Playlist extends React.Component {
 
 
   handelValue(event) {
-    this.props.handelChange(event.target.value, this.props.index)
+    if (event.target.value.length === 0) {
+      this.props.handelChange('untitled', this.props.index)
+    }
+    else {
+      this.props.handelChange(event.target.value, this.props.index)
+    }
   }
 
   getPlaylist(event) {
@@ -74,7 +79,7 @@ class Playlist extends React.Component {
 
   render() {
     return (
-      <div className="playlist" onClick={()=>console.info(this.props.playlists, 'shalom')}>
+      <div className="playlist">
         {this.editMode()}
         {this.isEmptyPlaylist()}
       </div>

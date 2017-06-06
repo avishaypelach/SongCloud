@@ -16,7 +16,7 @@ class Song extends React.Component {
       playingMode: false
     };
     this.handelSongClick = this.handelSongClick.bind(this);
-    this.whatModePlayerIs = this.whatModePlayerIs.bind(this);
+    this.whatModeIconOnSongIs = this.whatModeIconOnSongIs.bind(this);
   }
 
   msToTime(duration) {
@@ -32,7 +32,8 @@ class Song extends React.Component {
   }
 
   handelSongClick(value) {
-    this.props.moveSongToPlaylist(value)
+    this.props.moveSongToPlaylist(value);
+    this.changSongMode();
   }
 
   isSongInPlaylist(value) {
@@ -49,12 +50,44 @@ class Song extends React.Component {
     this.setState({playingMode: !this.state.playingMode})
   }
 
-  whatModePlayerIs() {
-    if (this.state.playingMode === true) {
-      return <i className="fa fa-pause-circle-o pause-btn-on-card" aria-hidden="true"/>;
+  whatModeIconOnSongIs() {
+    if (this.props.currentTrack !== null) {
+      if (this.props.currentTrack.id === this.props.song.id) {
+        if (this.props.mode === 'play') {
+          return <i className="fa fa-pause-circle-o pause-btn-on-card" aria-hidden="true"/>;
+        }
+        else {
+          return <i className="fa fa-play-circle-o play-btn-on-card" aria-hidden="true"/>;
+        }
+      }
     }
     else {
-      return <i className="fa fa-play-circle-o play-btn-on-card" aria-hidden="true"/>;
+      return null;
+    }
+  }
+
+  changSongMode() {
+    if (this.props.currentTrack !== null) {
+      if (this.props.currentTrack.id === this.props.song.id) {
+        if (this.props.mode === 'play') {
+          this.props.songMode('pause');
+        }
+        else {
+          this.props.songMode('play');
+        }
+      }
+    }
+    else {
+      this.props.songMode('play');
+    }
+  }
+
+  songTitleLength() {
+    if (this.props.song.title.length > 40) {
+      return (<p className="song-name"> {this.props.song.title.slice(0, 40) + '...'} </p>);
+    }
+    else {
+      return (<p className="song-name"> {this.props.song.title} </p>)
     }
   }
 
@@ -73,15 +106,14 @@ class Song extends React.Component {
         <div className="img-holder" onClick={() => {
           this.handelSongClick(this.props.song);
           this.isSongPlaying();
-          console.info(this.props, 'pressing on pic');
         }}>
           <div className="song-img"
                style={{'backgroundImage': `url("${trackImg}")`}}
           />
-          {this.whatModePlayerIs()}
+          {this.whatModeIconOnSongIs()}
         </div>
         <div className="song-details">
-          <p className="song-name"> {this.props.song.title.slice(0, 30) + '...'} </p>
+          {this.songTitleLength()}
           <i className="fa fa-clock-o song-length-icon" aria-hidden="true"/>
           <span className="song-length"> {this.msToTime(this.props.song.duration)} </span>
           {this.isSongInPlaylist(this.props.song)}
@@ -103,7 +135,8 @@ class Song extends React.Component {
 function mapStateToProps(stateData) {
   return {
     playlists: stateData.playlists,
-    currentTrack: stateData.currentTrack
+    currentTrack: stateData.currentTrack,
+    mode: stateData.setAudioModeReducer
   }
 }
 function mapDispatchToProps(dispatch) {
@@ -112,6 +145,12 @@ function mapDispatchToProps(dispatch) {
       dispatch({
         type: 'UPDATE_CURRENT_TRACK',
         song: value
+      });
+    },
+    songMode(value){
+      dispatch({
+        type: 'CHANG_SONG_MODE',
+        mode: value
       });
     }
   }

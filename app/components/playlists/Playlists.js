@@ -17,7 +17,7 @@ class Playlists extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.playlistId !== nextProps.playlistId) {
-      this.refs[nextProps.playlistId].scrollIntoView({block: 'start', behavior: 'smooth'})
+      this.refs[nextProps.playlistId].scrollIntoView({block: 'end', behavior: 'smooth'})
     }
   }
 

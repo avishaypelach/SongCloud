@@ -14,10 +14,34 @@ class Player extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (!prevProps === this.props.currentTrack) {
-      this.player.pause()
+    if (prevProps === this.props.currentTrack) {
+      if (this.props.currentTrack !== null) {
+        if (this.props.mode === 'play') {
+          this.player.play();
+        }
+        else if (this.props.mode === 'pause') {
+          this.player.pause()
+        }
+      }
     }
   }
+
+  componentWillReceiveProps(nextProps){
+    if (nextProps.currentTrack === this.props.currentTrack) {
+      if (this.props.currentTrack !== null) {
+        if (this.props.mode === 'play') {
+          this.player.pause();
+        }
+        else if (this.props.mode === 'pause') {
+          this.player.play();
+        }
+      }
+    }
+    else if(this.player){
+      this.player.play();
+    }
+  }
+
 
   isPlayerGettingASong() {
     if (this.props.currentTrack === null) {
@@ -36,7 +60,7 @@ class Player extends React.Component {
             </div>
             <div className="player-area">
               <audio className="player-tool" controls src={songUrl} autoPlay ref={(ref) => this.player = ref }
-                     onPlay={() => console.info('it played')} onPause={() => console.info('it stopped')}/>
+                     onPlay={() => this.props.songMode('play')} onPause={() => this.props.songMode('pause')}/>
             </div>
           </div>
         </footer>
@@ -52,8 +76,19 @@ class Player extends React.Component {
 
 function mapStateToProps(stateData) {
   return {
-    currentTrack: stateData.currentTrack
+    currentTrack: stateData.currentTrack,
+    mode: stateData.setAudioModeReducer
+  }
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    songMode(value){
+      dispatch({
+        type: 'CHANG_SONG_MODE',
+        mode: value
+      });
+    }
   }
 }
 
-export default connect(mapStateToProps)(Player);
+export default connect(mapStateToProps, mapDispatchToProps)(Player);

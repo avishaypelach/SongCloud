@@ -1,7 +1,7 @@
 @import 'assets/styles/colors';
 
 //----------------song-------
-.song-card{
+.song-card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -10,58 +10,68 @@
   margin-bottom: 40px;
   margin-right: 50px;
   border: 1px solid #D8D8D8;
-  background:  #FFFFFF;
+  background: #FFFFFF;
 }
-.img-holder{
+
+.img-holder {
   width: 100%;
   height: 70%;
   display: flex;
   justify-content: center;
   position: relative;
   cursor: pointer;
+  padding-top: 10px;
 }
-.song-img{
+
+.song-img {
   align-self: center;
   width: 91%;
-  height: 90%;
+  height: 100%;
   background-position: 0 50%;
   background-size: cover;
 }
-.play-btn-on-card{
+
+.play-btn-on-card {
   font-size: 4.4rem;
   color: #FFFFFF;
   position: absolute;
-  top: 13%;
+  top: 15%;
   left: 37%;
-  display: none;
+  display: block;
 }
 
-.img-holder:hover .play-btn-on-card{
+.img-holder:hover .play-btn-on-card {
   display: block;
 }
-.pause-btn-on-card{
+
+.pause-btn-on-card {
   font-size: 4.4rem;
   color: #FFFFFF;
   position: absolute;
-  top: 13%;
+  top: 15%;
   left: 37%;
   display: block;
 }
-.song-details{
+
+.song-details {
   padding-left: 10px;
   position: relative;
   margin-bottom: 4px;
 }
-.song-name{
+
+.song-name {
   font-size: 0.6rem;
 }
-.song-length-icon{
+
+.song-length-icon {
   font-size: 0.6rem;
 }
-.song-length{
+
+.song-length {
   font-size: 0.6rem;
 }
-.song-like{
+
+.song-like {
   position: absolute;
   top: 60%;
   right: 5%;
@@ -77,65 +87,32 @@
     color: $mainBlue;
   }
 }
-.blue-heart{
+
+.blue-heart {
   color: $mainBlue;
 }
 
-.page-navigation{
-  display: flex;
-  flex-direction:row;
-  justify-content:center;
-  width: 100%;
-}
-
-.page-navigation-btn{
-  width: 87px;
-  height: 30px;
-  border-radius: 4px;
-  font-size: 13px;
-  font-weight: 400;
-}
-.previous-btn{
-  margin-right: 60px;
-  color: #FFFFFF;
-  border: none;
-}
-
-.previous-btn-not-first-page{
-  margin-right: 60px;
-  color: #FFFFFF;
-  background-color:  $mainBlue;
-}
-
-.page-number{
-  align-self: center;
-  font-size:  14px;
-}
-
-.next-btn{
-  margin-left: 60px;
-  color: #FFFFFF;
-  background-color: $mainBlue;
-}
-.song-dropdown{
+.song-dropdown {
   position: absolute;
   bottom: -130px;
   right: 10px;
-  z-index: 10;
+  z-index: 200;
   background-color: #FFFFFF;
   width: 130px;
   height: 110px;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
 }
-.dropdown-headers{
+
+.dropdown-headers {
   width: 100%;
   border-bottom: 1px solid #E0E0E0;
   padding-bottom: 5px;
 }
-.create-song-dropdown{
+
+.create-song-dropdown {
   font-size: 0.5625rem;
   font-weight: 600;
   color: $mainBlue;

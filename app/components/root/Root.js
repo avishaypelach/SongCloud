@@ -24,9 +24,7 @@ export default class Root extends React.Component {
   constructor() {
     super();
 
-    this.state = {
-
-    };
+    this.state = {};
   }
 
 
@@ -35,7 +33,7 @@ export default class Root extends React.Component {
     return (
       <div>
         <Topbar
-          history = {this.props.history}
+          history={this.props.history}
         />
         <main>
           <Switch>

@@ -17,7 +17,7 @@ export default function Signup() {
         <span className="user-details"> password </span>
         <input type="password" name="password" placeholder="password" className="user-details-input"/>
       </div>
-      <button className="continue-btn"> continue </button>
+      <button className="continue-btn"> continue</button>
       <div className="is-there-an-account">
         <span className="is-there-an-account-question"> Don't have an account yet? </span>
         <span className="is-there-an-account-signin"> sign in </span>

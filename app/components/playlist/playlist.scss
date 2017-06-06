@@ -29,7 +29,8 @@
   border-radius: 20px;
   padding-left: 15px;
 }
-.playlist-name:focus{
+
+.playlist-name:focus {
   outline: none;
 }
 
@@ -63,9 +64,10 @@
   cursor: pointer;
   position: absolute;
   top: 0;
-  right: 11px;
+  right: 20px;
 }
-.delete-playlist-btn:focus{
+
+.delete-playlist-btn:focus {
   outline: none;
 }
 
@@ -73,7 +75,7 @@
   display: block;
 }
 
-.no-songs-in-playlist-heading{
+.no-songs-in-playlist-heading {
   display: flex;
   justify-content: center;
   font-size: 1.4rem;

@@ -32,7 +32,8 @@ class Sidebar extends React.Component {
 
   createPlaylistList(playlist) {
     return (
-      <li className="sidebar-playlists-list-li" key={playlist.id} id={'scroll' + playlist.id} onClick={(e) => this.handelLiClick(e)}> {playlist.name} </li>
+      <li className="sidebar-playlists-list-li" key={playlist.id} id={'scroll' + playlist.id}
+          onClick={(e) => this.handelLiClick(e)}> {playlist.name} </li>
     );
   }
 

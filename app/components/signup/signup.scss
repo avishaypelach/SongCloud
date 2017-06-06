@@ -1,27 +1,27 @@
 @import 'assets/styles/colors';
 
 //----------signup--------------
-.main-signup{
+.main-signup {
   margin: 70px 0;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
 
-.logo-area-signup{
+.logo-area-signup {
   font-size: 150px;
   color: $mainBlue;
   align-self: center;
 }
 
-.signup-h1{
+.signup-h1 {
   color: $mainBlue;
   align-self: center;
   font-size: 4rem;
   margin: 0;
 }
 
-.create-account-area{
+.create-account-area {
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -29,19 +29,21 @@
   width: 600px;
   overflow: hidden;
 }
-.signup-h2{
+
+.signup-h2 {
   font-size: 2rem;
   text-transform: capitalize;
 
 }
-.user-details{
+
+.user-details {
   color: $mainBlue;
   font-size: 1.2rem;
   margin-bottom: 30px;
   text-transform: capitalize;
 }
 
-.user-details-input{
+.user-details-input {
   border: none;
   border-bottom: 3px solid $mainBlue;
   width: 100%;
@@ -50,11 +52,13 @@
   padding: 5px;
   text-transform: capitalize;
 }
-.user-details-input:active{
+
+.user-details-input:active {
   border: none;
   border-bottom: 3px solid $mainBlue;
 }
-.continue-btn{
+
+.continue-btn {
   background-color: $mainBlue;
   align-self: center;
   color: white;
@@ -64,15 +68,18 @@
   font-size: 1.4rem;
   font-weight: 400;
 }
-.is-there-an-account{
+
+.is-there-an-account {
   align-self: center;
   display: flex;
   padding-top: 30px;
 }
-.is-there-an-account-question{
+
+.is-there-an-account-question {
   color: black;
   font-weight: 400;
 }
+
 .is-there-an-account-signin {
   color: $mainBlue;
   margin-left: 10px;

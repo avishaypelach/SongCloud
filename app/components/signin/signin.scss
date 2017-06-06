@@ -1,24 +1,27 @@
 @import 'assets/styles/colors';
 
 //-------------signin-----------
-.main-signin{
+.main-signin {
   margin: 70px 0;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
-.logo-area-signin{
+
+.logo-area-signin {
   font-size: 150px;
   color: $mainBlue;
   align-self: center;
 }
-.signin-h1{
+
+.signin-h1 {
   color: $mainBlue;
   align-self: center;
   font-size: 4rem;
   margin: 0;
 }
-.signin-area{
+
+.signin-area {
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -26,11 +29,13 @@
   width: 600px;
   overflow: hidden;
 }
-.signin-h2{
+
+.signin-h2 {
   font-size: 2rem;
   text-transform: capitalize;
 }
-.is-there-an-account-create-acount{
+
+.is-there-an-account-create-acount {
   color: $mainBlue;
   margin-left: 10px;
   text-transform: capitalize;

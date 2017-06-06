@@ -8,7 +8,7 @@ import uuid from 'uuid';
 
 export default function Songs(props) {
   return (
-    <div className="songs-container songs">
+    <div className="genre-div songs">
       {props.songs.map((value) => {
         return (
           <div key={uuid()}>
@@ -17,6 +17,7 @@ export default function Songs(props) {
               song={value}
               mode={props.mode}
             />
+            {console.info(props.pageMode,'heyyy')}
           </div>
         );
       })}

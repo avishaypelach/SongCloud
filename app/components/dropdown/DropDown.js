@@ -31,7 +31,8 @@ class DropDown extends React.Component {
     let playlistDropdwon = <div className="dropdown-headers">
       <span> Edit playlist </span></div>;
 
-    if (this.props.mode === 'explore') {
+    if (this.props.pageMode === 'explore') {
+      console.info(this.props.mode,'shalomm');
       return exploreDropdown;
     }
     else {
@@ -75,6 +76,7 @@ class DropDown extends React.Component {
   }
 
   render() {
+    console.info(this.props.mode, 'hola');
     return (
       <div className="song-dropdown">
         {this.witchHeading()}

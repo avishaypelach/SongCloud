@@ -12,7 +12,7 @@ export default class Explore extends React.Component {
     super(props);
     this.state = {
       songs: [],
-      mode: 'explore',
+      pageMode: 'explore',
       songsLoading: 'loading',
       props: {},
       offset: 0,
@@ -105,7 +105,7 @@ export default class Explore extends React.Component {
               <Songs
                 {...this.props}
                 songs={this.state.songs}
-                mode={this.state.mode}
+                pageMode={this.state.pageMode}
               />
               <div className="page-navigation">
                 {this.isFirstPage()}

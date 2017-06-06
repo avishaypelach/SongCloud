@@ -21,7 +21,6 @@ class Playlist extends React.Component {
     this.state = {};
   }
 
-
   handelValue(event) {
     if (event.target.value.length === 0) {
       this.props.handelChange('untitled', this.props.index)

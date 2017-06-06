@@ -8,7 +8,7 @@ import uuid from 'uuid';
 
 export default function Songs(props) {
   return (
-    <div className="genre-div songs">
+    <div className="songs-container songs">
       {props.songs.map((value) => {
         return (
           <div key={uuid()}>

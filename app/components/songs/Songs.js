@@ -17,7 +17,6 @@ export default function Songs(props) {
               song={value}
               mode={props.mode}
             />
-            {console.info(props.pageMode,'heyyy')}
           </div>
         );
       })}
